@@ -1,0 +1,6 @@
+flask==2.0.1
+pandas==1.2.4
+requests==2.25.1
+beautifulsoup4==4.9.3
+sqlalchemy==1.4.15
+psycopg2-binary==2.8.6
