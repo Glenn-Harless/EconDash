@@ -48,10 +48,12 @@ version: '3.8'
 x-airflow-common:
   &airflow-common
   # In order to add custom dependencies or upgrade provider packages you can use your extended image.
-  # Comment the image line, place your Dockerfile in the directory where you placed the docker-compose.yaml
-  # and uncomment the "build" line below, Then run `docker-compose build` to build the images.
-  image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.6.1}
-  # build: .
+  # Comment out the existing image line
+  # image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.6.1}
+  # Uncomment the build line and specify the context and Dockerfile location
+  build:
+    context: ./airflow
+    dockerfile: airflow.Dockerfile
   environment:
     &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
@@ -62,7 +64,7 @@ x-airflow-common:
     AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
     AIRFLOW__CORE__FERNET_KEY: ''
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
-    AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session'
     # yamllint disable rule:line-length
     # Use simple http server on scheduler for health checks
@@ -87,7 +89,7 @@ x-airflow-common:
 
 services:
   postgres:
-    image: postgres:13
+    image: postgres:latest
     environment:
       POSTGRES_USER: airflow
       POSTGRES_PASSWORD: airflow
@@ -100,6 +102,9 @@ services:
       retries: 5
       start_period: 5s
     restart: always
+    ports:
+      - "5432:5432"
+      
 
   redis:
     image: redis:latest
@@ -192,15 +197,17 @@ services:
         function ver() {
           printf "%04d%04d%04d%04d" $${1//./ }
         }
-        airflow_version=$$(AIRFLOW__LOGGING__LOGGING_LEVEL=INFO && gosu airflow airflow version)
-        airflow_version_comparable=$$(ver $${airflow_version})
+        # Ensure gosu is available
+        apt-get update && apt-get install -y gosu && rm -rf /var/lib/apt/lists/*
+        # Fetch Airflow version using gosu to ensure it runs under the right user context
+        airflow_version=$$(gosu airflow airflow version)
+        airflow_version_comparable=$$(ver $$airflow_version)
         min_airflow_version=2.2.0
-        min_airflow_version_comparable=$$(ver $${min_airflow_version})
-        if (( airflow_version_comparable < min_airflow_version_comparable )); then
-          echo
-          echo -e "\033[1;31mERROR!!!: Too old Airflow version $${airflow_version}!\e[0m"
-          echo "The minimum Airflow version supported: $${min_airflow_version}. Only use this or higher!"
-          echo
+        min_airflow_version_comparable=$$(ver $$min_airflow_version)
+        echo "Detected Airflow version: $$airflow_version"
+        if (( $$airflow_version_comparable < $$min_airflow_version_comparable )); then
+          echo -e "\033[1;31mERROR!!!: Too old Airflow version $$airflow_version!\e[0m"
+          echo "The minimum Airflow version supported: $$min_airflow_version. Only use this or higher!"
           exit 1
         fi
         if [[ -z "${AIRFLOW_UID}" ]]; then
@@ -295,5 +302,6 @@ services:
       airflow-init:
         condition: service_completed_successfully
 
+      
 volumes:
   postgres-db-volume:
