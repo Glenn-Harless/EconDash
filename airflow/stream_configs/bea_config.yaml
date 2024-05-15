@@ -3,7 +3,7 @@ bea_datasets:
   description: Standard NIPA tables
   frequency: A
   api:
-    userid: 8AF622DE-FDFE-4765-B075-E572B57B64BE
+    userid: BEA_KEY
     method: GETDATA
     datasetname: NIPA
     resultformat: JSON
@@ -909,7 +909,7 @@ bea_datasets:
   description: Standard NI underlying detail tables
   frequency: A
   api:
-    userid: 8AF622DE-FDFE-4765-B075-E572B57B64BE
+    userid: BEA_KEY
     method: GETDATA
     datasetname: NIUnderlyingDetail
     resultformat: JSON
@@ -1120,7 +1120,7 @@ bea_datasets:
   description: Multinational Enterprises
   frequency: A
   api:
-    userid: 8AF622DE-FDFE-4765-B075-E572B57B64BE
+    userid: BEA_KEY
     method: GETDATA
     datasetname: MNE
     resultformat: JSON
@@ -1154,7 +1154,7 @@ bea_datasets:
   description: Standard Fixed Assets tables
   frequency: A
   api:
-    userid: 8AF622DE-FDFE-4765-B075-E572B57B64BE
+    userid: BEA_KEY
     method: GETDATA
     datasetname: FixedAssets
     resultformat: JSON
@@ -1500,7 +1500,7 @@ bea_datasets:
   description: International Transactions Accounts
   frequency: A
   api:
-    userid: 8AF622DE-FDFE-4765-B075-E572B57B64BE
+    userid: BEA_KEY
     method: GETDATA
     datasetname: ITA
     resultformat: JSON
@@ -1518,7 +1518,7 @@ bea_datasets:
   description: International Investment Position
   frequency: A
   api:
-    userid: 8AF622DE-FDFE-4765-B075-E572B57B64BE
+    userid: BEA_KEY
     method: GETDATA
     datasetname: IIP
     resultformat: JSON
@@ -1536,7 +1536,7 @@ bea_datasets:
   description: Input-Output Data
   frequency: A
   api:
-    userid: 8AF622DE-FDFE-4765-B075-E572B57B64BE
+    userid: BEA_KEY
     method: GETDATA
     datasetname: InputOutput
     resultformat: JSON
@@ -1550,7 +1550,7 @@ bea_datasets:
   description: International Services Trade
   frequency: A
   api:
-    userid: 8AF622DE-FDFE-4765-B075-E572B57B64BE
+    userid: BEA_KEY
     method: GETDATA
     datasetname: IntlServTrade
     resultformat: JSON
@@ -1570,7 +1570,7 @@ bea_datasets:
   description: International Services Supplied Through Affiliates
   frequency: A
   api:
-    userid: 8AF622DE-FDFE-4765-B075-E572B57B64BE
+    userid: BEA_KEY
     method: GETDATA
     datasetname: IntlServSTA
     resultformat: JSON
@@ -1590,7 +1590,7 @@ bea_datasets:
   description: GDP by Industry
   frequency: A
   api:
-    userid: 8AF622DE-FDFE-4765-B075-E572B57B64BE
+    userid: BEA_KEY
     method: GETDATA
     datasetname: GDPbyIndustry
     resultformat: JSON
@@ -1608,7 +1608,7 @@ bea_datasets:
   description: Regional data sets
   frequency: A
   api:
-    userid: 8AF622DE-FDFE-4765-B075-E572B57B64BE
+    userid: BEA_KEY
     method: GETDATA
     datasetname: Regional
     resultformat: JSON
@@ -1824,7 +1824,7 @@ bea_datasets:
   description: Underlying GDP by Industry
   frequency: A
   api:
-    userid: 8AF622DE-FDFE-4765-B075-E572B57B64BE
+    userid: BEA_KEY
     method: GETDATA
     datasetname: UnderlyingGDPbyIndustry
     resultformat: JSON
@@ -1842,7 +1842,7 @@ bea_datasets:
   description: Metadata about other API datasets
   frequency: A
   api:
-    userid: 8AF622DE-FDFE-4765-B075-E572B57B64BE
+    userid: BEA_KEY
     method: GETDATA
     datasetname: APIDatasetMetaData
     resultformat: JSON

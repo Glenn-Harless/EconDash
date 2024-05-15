@@ -74,11 +74,20 @@ x-airflow-common:
     # WARNING: Use _PIP_ADDITIONAL_REQUIREMENTS option ONLY for a quick checks
     # for other purpose (development, test and especially production usage) build/extend Airflow image.
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
+    BEA_API_KEY: "8AF622DE-FDFE-4765-B075-E572B57B64BE"  # Add your API key here
+    POSTGRES_HOST: "postgres"
+    POSTGRES_PORT: "5432"
+    POSTGRES_DB: "airflow"
+    POSTGRES_USER: "airflow"
+    POSTGRES_PASSWORD: "airflow"
   volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
+    - ${AIRFLOW_PROJ_DIR:-.}/packages:/opt/airflow/packages  # Adding for Dag Package Access
+    - ${AIRFLOW_PROJ_DIR:-.}/stream_configs:/opt/airflow/stream_configs  # Ensure this line is present
+
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on

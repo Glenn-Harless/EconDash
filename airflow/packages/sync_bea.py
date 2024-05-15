@@ -1,17 +1,17 @@
+import os
 import requests
 import pandas as pd
 import time
 import logging
 from datetime import datetime
 from database_util import PostgresDatabase
+import yaml
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-import yaml
-
-# Load the BEA API datasets and parameters from a YAML file
-
+# Use an absolute path for the YAML config file
+YAML_FILE_PATH = '/opt/airflow/stream_configs/bea_config.yaml'
 
 class BEAApiClient:
     def __init__(self, api_key, db_instance):
@@ -19,7 +19,11 @@ class BEAApiClient:
         self.api_key = api_key
         self.db = db_instance  # Instance of PostgresDatabase
         self.request_count = 0
+        self.load_config(YAML_FILE_PATH)
 
+    def load_config(self, filepath):
+        with open(filepath, 'r') as file:
+            self.configs = yaml.safe_load(file)['bea_datasets']
 
     def get_parameter_list(self, dataset_name, result_format="JSON"):
         """Retrieves a list of parameters for a specific dataset from the BEA API."""
@@ -76,6 +80,13 @@ class BEAApiClient:
                         table_names[dataset['DatasetName']] = 'No valid table names found'
         return table_names
     
+    def determine_frequency(self, description):
+        """
+        We are defaulting to annual frequency to get smoother data and do more of a POC for the last 50 years
+        of financial dominance. We can add more logic to determine frequency based on the description.
+        """
+        return 'A'  # Default to annual if no specific frequency is found
+
     def check_rate_limit(self):
         # Assuming a limit of 100 requests per minute
         if self.request_count >= 100:
@@ -85,7 +96,7 @@ class BEAApiClient:
 
     def get_data(self, config, result_format="JSON"):
         current_year = datetime.now().year
-        start_year = current_year - 100  # Retrieve data for the last 100 years
+        start_year = current_year - 50  # Retrieve data for the last 50 years
         year_range = ','.join(str(year) for year in range(start_year, current_year + 1))
 
         params = {
@@ -93,11 +104,12 @@ class BEAApiClient:
             'method': 'GetData',
             'DataSetName': config['dataset_name'],
             'TableName': config['table_name'],
-            'Frequency': 'M',
+            'Frequency': config['frequency'],
             'Year': year_range,
             'ResultFormat': result_format
         }
-        params.update(config.get('additional_params', {}))  # Merge additional parameters if any
+
+        params.update(config.get('additional_params', {}))
 
         self.check_rate_limit()
         response = requests.get(self.base_url, params=params)
@@ -105,6 +117,8 @@ class BEAApiClient:
 
         if response.status_code == 429:
             retry_after = int(response.headers.get('Retry-After', 3600))
+            if retry_after < 0:
+                retry_after = 10
             logging.warning("Rate limit exceeded. Pausing for {} seconds.".format(retry_after))
             time.sleep(retry_after)
             return self.get_data(config, result_format)
@@ -116,41 +130,43 @@ class BEAApiClient:
         return response.json()
 
     def sync_datasets(self):
-        for config in self.configs:
-            logging.info(f"Retrieving data for {config['dataset_name']} with table {config['table_name']}")
-            data = self.get_data(config)
-            if data and 'Data' in data['BEAAPI']['Results']:
-                self.load_into_postgres(data, config['dataset_name'], config['table_name'])
-            else:
-                logging.warning(f"No data or error returned for {config['dataset_name']}")
+        for dataset in self.configs:
+            dataset_name = dataset['name']
+            for table in dataset['api']['tables']:
+                table_name = table['table_name']
+                frequency = self.determine_frequency(table['description'])
+                config = {
+                    'dataset_name': dataset_name,
+                    'table_name': table_name,
+                    'frequency': frequency,
+                    'additional_params': {}  # Add other parameters as needed
+                }
+                if dataset_name == 'Regional':
+                    config['additional_params']['GeoFips'] = ['STATE']
+                logging.info(f"Retrieving data for {dataset_name} with table {table_name} at {frequency} frequency")
+                data = self.get_data(config)
+                try:
+                    if data and 'Data' in data['BEAAPI']['Results']:
+                        self.load_into_postgres(data, dataset_name, table_name)
+                    else:
+                        logging.warning(f"No data or error returned for {dataset_name}")
+                except Exception as e:
+                    logging.info(f"Error loading data into Postgres: {e}")
+                    logging.info(data['BEAAPI']['Error'])
 
     def load_into_postgres(self, data, dataset_name, table_name):
         df = pd.DataFrame(data['BEAAPI']['Results']['Data'])
-        schema_table = f'bea.{dataset_name}_{table_name}'  # Unique table per dataset and table name
-        self.db.insert_data(df, schema_table)
+        table_name = f'{dataset_name}_{table_name}'  # Unique table per dataset and table name
+        self.db.insert_data(df, table_name, 'bea', if_exists='replace')
 
 if __name__ == "__main__":
-    # import os
-    # import dot_env
-    # dot_env.load()
-    # api_key = os.environ.get('BEA_API_KEY')
-
-    # Test hardcode:
-    api_key = "8AF622DE-FDFE-4765-B075-E572B57B64BE"
-    # Usage
+    api_key = os.getenv('BEA_API_KEY')
     db_instance = PostgresDatabase(
-        host="localhost",
-        port=5432,
-        database="airflow",
-        user="airflow",
-        password="airflow",
+        host=os.getenv('POSTGRES_HOST'),
+        port=int(os.getenv('POSTGRES_PORT')),
+        database=os.getenv('POSTGRES_DB'),
+        user=os.getenv('POSTGRES_USER'),
+        password=os.getenv('POSTGRES_PASSWORD')
     )
     bea_client = BEAApiClient(api_key, db_instance)
-    valid_table_names = bea_client.fetch_valid_table_names()
-
-    import json
-    # Save the valid table names to a JSON file
-    with open('valid_table_names.json', 'w') as file:
-        json.dump(valid_table_names, file, indent=4)
-
-    print("Valid table names have been saved to 'valid_table_names.json'.")
+    bea_client.sync_datasets()
