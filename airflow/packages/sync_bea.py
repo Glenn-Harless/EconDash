@@ -56,7 +56,7 @@ class BEAApiClient:
     
     def fetch_all_dataset_parameters(self):
         """Fetch parameters for all datasets and store them in self.params."""
-        for dataset in self.datasets:
+        for dataset in self.configs:
             logging.info(f"Fetching parameters for {dataset['DatasetName']}")
             param_data = self.get_parameter_list(dataset['DatasetName'])
             if param_data:
@@ -70,7 +70,7 @@ class BEAApiClient:
     def fetch_valid_table_names(self):
         """Fetch and display valid table names for datasets that include 'TableName' as a parameter."""
         table_names = {}
-        for dataset in self.datasets:
+        for dataset in self.configs:
             for param in dataset['Parameters']['BEAAPI']['Results']['Parameter']:
                 if param['ParameterName'] == 'TableName':
                     result = self.get_parameter_values(dataset['DatasetName'], 'TableName')
@@ -157,7 +157,7 @@ class BEAApiClient:
     def load_into_postgres(self, data, dataset_name, table_name):
         df = pd.DataFrame(data['BEAAPI']['Results']['Data'])
         table_name = f'{dataset_name}_{table_name}'  # Unique table per dataset and table name
-        self.db.insert_data(df, table_name, 'bea', if_exists='replace')
+        self.db.insert_data_with_copy(df, table_name, 'bea', if_exists='replace')
 
 if __name__ == "__main__":
     api_key = os.getenv('BEA_API_KEY')

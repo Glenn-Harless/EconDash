@@ -27,3 +27,10 @@ load-data:
 # Initialize or reset the database (optional command)
 db-init:
 	docker-compose run web python scripts/init_db.py
+
+# Initialize Airflow
+airflow-init:
+	docker-compose up airflow-init
+
+# Full setup sequence
+all: build airflow-init up
