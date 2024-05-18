@@ -4,7 +4,7 @@ from jinja2 import Template
 import yaml
 
 # Load the original YAML file
-with open('/Users/glennharless/dev/EconDash/airflow/stream_configs/bea_config.yaml', 'r') as file:
+with open('/Users/glennharless/dev/EconDash/airflow/stream_configs/bea_config.yml', 'r') as file:
     bea_config = yaml.safe_load(file)
 
 # Create a list to hold the cleaned datasets
@@ -42,9 +42,9 @@ with parsed_data as (
     {% for dataset in datasets %}
         {% for table in dataset['api']['tables'] %}
             select
-                '{{ dataset['name'].replace("'", "''") }}' as dataset_name,
-                '{{ table['table_name'].replace("'", "''") }}' as table_name,
-                '{{ table['description'].replace("'", "''") }}' as table_description
+                '{{ dataset['name'].replace("'", "''").lower() }}' as dataset_name,
+                '{{ table['table_name'].replace("'", "''").lower() }}' as table_name,
+                '{{ table['description'].replace("'", "''").lower() }}' as table_description
             {% if not loop.last %} union all {% endif %}
         {% endfor %}
         {% if not loop.last %} union all {% endif %}

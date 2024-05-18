@@ -11,7 +11,8 @@ import yaml
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Use an absolute path for the YAML config file
-YAML_FILE_PATH = '/opt/airflow/stream_configs/bea_config.yaml'
+YAML_FILE_PATH = '/opt/airflow/stream_configs/bea_config.yml'
+# YAML_FILE_PATH='/Users/glennharless/dev/EconDash/airflow/stream_configs/bea_config.yml'
 
 class BEAApiClient:
     def __init__(self, api_key, db_instance):
@@ -156,7 +157,7 @@ class BEAApiClient:
 
     def load_into_postgres(self, data, dataset_name, table_name):
         df = pd.DataFrame(data['BEAAPI']['Results']['Data'])
-        table_name = f'{dataset_name}_{table_name}'  # Unique table per dataset and table name
+        table_name = f'{dataset_name}_{table_name}'.lower()  # Ensure lower case
         self.db.insert_data_with_copy(df, table_name, 'bea', if_exists='replace')
 
 if __name__ == "__main__":

@@ -33,7 +33,7 @@ else:
 template = env.get_template(template_file)
 
 # Load the variables from the YAML file
-with open('airflow/stream_configs/bea_config.yaml') as f:
+with open('airflow/stream_configs/bea_config.yml') as f:
     bea_config = yaml.safe_load(f)
 
 # Debugging output
@@ -42,13 +42,23 @@ print(bea_config['bea_datasets'][0].keys())
 print(bea_config['bea_datasets'][0]['api'].keys())
 
 # Ensure 'tables' is nested within 'api' in each dataset
+# convert table names and dataset name to lowercawe
+cleaned_datasets = []
 for dataset in bea_config['bea_datasets']:
-    if 'api' in dataset and 'tables' in dataset['api']:
-        print(f"Dataset: {dataset['name']} has tables.")
-        for table in dataset['api']['tables']:
-            print(f"Table: {table}")
-    else:
-        print(f"Dataset: {dataset['name']} has no tables.")
+    # convert dataset.name to lower
+    dataset['name'] = dataset['name'].lower()
+    if 'tables' in dataset['api']:
+        cleaned_tables = [
+            table for table in dataset['api']['tables']
+            if table.get('table_name') and table.get('description')
+        ]
+        # lowercase table_name and description
+        for table in cleaned_tables:
+            table['table_name'] = table['table_name'].lower()
+            table['description'] = table['description'].lower()
+
+        dataset['api']['tables'] = cleaned_tables
+    cleaned_datasets.append(dataset)
 
 # Render the template with the variables
 output = template.render(bea_datasets=bea_config['bea_datasets'])

@@ -2,7 +2,7 @@
 version: 2
 
 sources:
-  - name: bea_data
+  - name: bea
     tables:
       {%- for dataset in bea_datasets %}
         {%- if dataset.api.tables is defined and dataset.api.tables %}

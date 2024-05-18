@@ -1,12 +1,7 @@
 bea_datasets:
-- name: NIPA
-  description: Standard NIPA tables
-  frequency: A
-  api:
-    userid: BEA_KEY
-    method: GETDATA
+- api:
     datasetname: NIPA
-    resultformat: JSON
+    method: GETDATA
     parameters:
     - name: Frequency
       value: ''
@@ -18,665 +13,901 @@ bea_datasets:
       value: Specify Value
     - name: Year
       value: ''
-    tables:
-    - table_name: T10101
-      description: Table 1.1.1. Percent Change From Preceding Period in Real Gross Domestic Product (A) (Q)
-    - table_name: T10102
-      description: Table 1.1.2. Contributions to Percent Change in Real Gross Domestic Product (A) (Q)
-    - table_name: T10103
-      description: Table 1.1.3. Real Gross Domestic Product, Quantity Indexes (A) (Q)
-    - table_name: T10104
-      description: Table 1.1.4. Price Indexes for Gross Domestic Product (A) (Q)
-    - table_name: T10105
-      description: Table 1.1.5. Gross Domestic Product (A) (Q)
-    - table_name: T10106
-      description: Table 1.1.6. Real Gross Domestic Product, Chained Dollars (A) (Q)
-    - table_name: T10107
-      description: Table 1.1.7. Percent Change From Preceding Period in Prices for Gross Domestic Product (A) (Q)
-    - table_name: T10108
-      description: Table 1.1.8. Contributions to Percent Change in the Gross Domestic Product Price Index (A) (Q)
-    - table_name: T10109
-      description: Table 1.1.9. Implicit Price Deflators for Gross Domestic Product (A) (Q)
-    - table_name: T10110
-      description: Table 1.1.10. Percentage Shares of Gross Domestic Product (A) (Q)
-    - table_name: T10111
-      description: 'Table 1.1.11. Real Gross Domestic Product: Percent Change From Quarter One Year Ago (Q)'
-    - table_name: T10201
-      description: Table 1.2.1. Percent Change From Preceding Period in Real Gross Domestic Product by Major Type of Product (A) (Q)
-    - table_name: T10202
-      description: Table 1.2.2. Contributions to Percent Change in Real Gross Domestic Product by Major Type of Product (A) (Q)
-    - table_name: T10203
-      description: Table 1.2.3. Real Gross Domestic Product by Major Type of Product, Quantity Indexes (A) (Q)
-    - table_name: T10204
-      description: Table 1.2.4. Price Indexes for Gross Domestic Product by Major Type of Product (A) (Q)
-    - table_name: T10205
-      description: Table 1.2.5. Gross Domestic Product by Major Type of Product (A) (Q)
-    - table_name: T10206
-      description: Table 1.2.6. Real Gross Domestic Product by Major Type of Product, Chained Dollars (A) (Q)
-    - table_name: T10301
-      description: Table 1.3.1. Percent Change From Preceding Period in Real Gross Value Added by Sector (A) (Q)
-    - table_name: T10303
-      description: Table 1.3.3. Real Gross Value Added by Sector, Quantity Indexes (A) (Q)
-    - table_name: T10304
-      description: Table 1.3.4. Price Indexes for Gross Value Added by Sector (A) (Q)
-    - table_name: T10305
-      description: Table 1.3.5. Gross Value Added by Sector (A) (Q)
-    - table_name: T10306
-      description: Table 1.3.6. Real Gross Value Added by Sector, Chained Dollars (A) (Q)
-    - table_name: T10401
-      description: Table 1.4.1. Percent Change From Preceding Period in Real Gross Domestic Product, Real Gross Domestic Purchases, and Real Final Sales to Domestic Purchasers (A) (Q)
-    - table_name: T10403
-      description: Table 1.4.3. Real Gross Domestic Product, Real Gross Domestic Purchases, and Real Final Sales to Domestic Purchasers, Quantity Indexes (A) (Q)
-    - table_name: T10404
-      description: Table 1.4.4. Price Indexes for Gross Domestic Product, Gross Domestic Purchases, and Final Sales to Domestic Purchasers (A) (Q)
-    - table_name: T10405
-      description: Table 1.4.5. Relation of Gross Domestic Product, Gross Domestic Purchases, and Final Sales to Domestic Purchasers (A) (Q)
-    - table_name: T10406
-      description: Table 1.4.6. Relation of Real Gross Domestic Product, Real Gross Domestic Purchases, and Real Final Sales to Domestic Purchasers, Chained Dollars (A) (Q)
-    - table_name: T10501
-      description: Table 1.5.1. Percent Change From Preceding Period in Real Gross Domestic Product, Expanded Detail (A) (Q)
-    - table_name: T10502
-      description: Table 1.5.2. Contributions to Percent Change in Real Gross Domestic Product, Expanded Detail (A) (Q)
-    - table_name: T10503
-      description: Table 1.5.3. Real Gross Domestic Product, Expanded Detail, Quantity Indexes (A) (Q)
-    - table_name: T10504
-      description: Table 1.5.4. Price Indexes for Gross Domestic Product, Expanded Detail (A) (Q)
-    - table_name: T10505
-      description: Table 1.5.5. Gross Domestic Product, Expanded Detail (A) (Q)
-    - table_name: T10506
-      description: Table 1.5.6. Real Gross Domestic Product, Expanded Detail, Chained Dollars (A) (Q)
-    - table_name: T10604
-      description: Table 1.6.4. Price Indexes for Gross Domestic Purchases (A) (Q)
-    - table_name: T10607
-      description: Table 1.6.7. Percent Change From Preceding Period in Prices for Gross Domestic Purchases (A) (Q)
-    - table_name: T10608
-      description: Table 1.6.8. Contributions to Percent Change in the Gross Domestic Purchases Price Index (A) (Q)
-    - table_name: T10701
-      description: Table 1.7.1. Percent Change From Preceding Period in Real Gross Domestic Product, Real Gross National Product, and Real Net National Product (A) (Q)
-    - table_name: T10703
-      description: Table 1.7.3. Real Gross Domestic Product, Real Gross National Product, and Real Net National Product, Quantity Indexes (A) (Q)
-    - table_name: T10704
-      description: Table 1.7.4. Price Indexes for Gross Domestic Product, Gross National Product, and Net National Product (A) (Q)
-    - table_name: T10705
-      description: Table 1.7.5. Relation of Gross Domestic Product, Gross National Product, Net National Product, National Income, and Personal Income (A) (Q)
-    - table_name: T10706
-      description: Table 1.7.6. Relation of Real Gross Domestic Product, Real Gross National Product, and Real Net National Product, Chained Dollars (A) (Q)
-    - table_name: T10803
-      description: Table 1.8.3. Command-Basis Real Gross Domestic Product and Gross National Product, Quantity Indexes (A) (Q)
-    - table_name: T10806
-      description: Table 1.8.6. Command-Basis Real Gross Domestic Product and Gross National Product, Chained Dollars (A) (Q)
-    - table_name: T10903
-      description: Table 1.9.3. Real Net Value Added by Sector, Quantity Indexes (A)
-    - table_name: T10904
-      description: Table 1.9.4. Price Indexes for Net Value Added by Sector (A)
-    - table_name: T10905
-      description: Table 1.9.5. Net Value Added by Sector (A)
-    - table_name: T10906
-      description: Table 1.9.6. Real Net Value Added by Sector, Chained Dollars (A)
-    - table_name: T11000
-      description: Table 1.10. Gross Domestic Income by Type of Income (A) (Q)
-    - table_name: T11100
-      description: Table 1.11. Percentage Shares of Gross Domestic Income (A)
-    - table_name: T11200
-      description: Table 1.12. National Income by Type of Income (A) (Q)
-    - table_name: T11300
-      description: Table 1.13. National Income by Sector, Legal Form of Organization, and Type of Income (A)
-    - table_name: T11400
-      description: Table 1.14. Gross Value Added of Domestic Corporate Business in Current Dollars and Gross Value Added of Nonfinancial Domestic Corporate Business in Current and Chained Dollars (A) (Q)
-    - table_name: T11500
-      description: Table 1.15. Price, Costs, and Profit Per Unit of Real Gross Value Added of Nonfinancial Domestic Corporate Business (A) (Q)
-    - table_name: T11600
-      description: Table 1.16. Sources and Uses of Private Enterprise Income (A)
-    - table_name: T11701
-      description: Table 1.17.1. Percent Change From Preceding Period in Real Gross Domestic Product, Real Gross Domestic Income, and Other Major NIPA Aggregates (A) (Q)
-    - table_name: T11705
-      description: Table 1.17.5. Gross Domestic Product, Gross Domestic Income, and Other Major NIPA Aggregates (A) (Q)
-    - table_name: T11706
-      description: Table 1.17.6. Real Gross Domestic Product, Real Gross Domestic Income, and Other Major NIPA Aggregates, Chained Dollars (A) (Q)
-    - table_name: T20100
-      description: Table 2.1. Personal Income and Its Disposition (A) (Q)
-    - table_name: T20200A
-      description: Table 2.2A. Wages and Salaries by Industry (A) (Q)
-    - table_name: T20200B
-      description: Table 2.2B. Wages and Salaries by Industry (A) (Q)
-    - table_name: T20301
-      description: Table 2.3.1. Percent Change From Preceding Period in Real Personal Consumption Expenditures by Major Type of Product (A) (Q)
-    - table_name: T20302
-      description: Table 2.3.2. Contributions to Percent Change in Real Personal Consumption Expenditures by Major Type of Product (A) (Q)
-    - table_name: T20303
-      description: Table 2.3.3. Real Personal Consumption Expenditures by Major Type of Product, Quantity Indexes (A) (Q)
-    - table_name: T20304
-      description: Table 2.3.4. Price Indexes for Personal Consumption Expenditures by Major Type of Product (A) (Q)
-    - table_name: T20305
-      description: Table 2.3.5. Personal Consumption Expenditures by Major Type of Product (A) (Q)
-    - table_name: T20306
-      description: Table 2.3.6. Real Personal Consumption Expenditures by Major Type of Product, Chained Dollars (A) (Q)
-    - table_name: T20307
-      description: Table 2.3.7. Percent Change From Preceding Period in Prices for Personal Consumption Expenditures by Major Type of Product (A) (Q)
-    - table_name: T20308
-      description: Table 2.3.8. Contributions to Percent Change in Prices for Personal Consumption Expenditures by Major Type of Product (A) (Q)
-    - table_name: T20311
-      description: 'Table 2.3.11. Real Personal Consumption Expenditures by Major Type of Product: Percent Change from Quarter One Year Ago (Q)'
-    - table_name: T20401
-      description: Table 2.4.1. Percent Change From Preceding Period in Real Personal Consumption Expenditures by Type of Product (A) (Q)
-    - table_name: T20402
-      description: Table 2.4.2. Contributions to Percent Change in Real Personal Consumption Expenditures by Type of Product (A) (Q)
-    - table_name: T20403
-      description: Table 2.4.3. Real Personal Consumption Expenditures by Type of Product, Quantity Indexes (A) (Q)
-    - table_name: T20404
-      description: Table 2.4.4. Price Indexes for Personal Consumption Expenditures by Type of Product (A) (Q)
-    - table_name: T20405
-      description: Table 2.4.5. Personal Consumption Expenditures by Type of Product (A) (Q)
-    - table_name: T20406
-      description: Table 2.4.6. Real Personal Consumption Expenditures by Type of Product, Chained Dollars (A) (Q)
-    - table_name: T20407
-      description: Table 2.4.7. Percent Change From Preceding Period in Prices for Personal Consumption Expenditures by Type of Product (A) (Q)
-    - table_name: T20408
-      description: Table 2.4.8. Contributions to Percent Change in Prices for Personal Consumption Expenditures by Type of Product (A) (Q)
-    - table_name: T20503
-      description: Table 2.5.3. Real Personal Consumption Expenditures by Function, Quantity Indexes (A)
-    - table_name: T20504
-      description: Table 2.5.4. Price Indexes for Personal Consumption Expenditures by Function (A)
-    - table_name: T20505
-      description: Table 2.5.5. Personal Consumption Expenditures by Function (A)
-    - table_name: T20506
-      description: Table 2.5.6. Real Personal Consumption Expenditures by Function, Chained Dollars (A)
-    - table_name: T20600
-      description: Table 2.6. Personal Income and Its Disposition, Monthly (M)
-    - table_name: T20700A
-      description: Table 2.7A. Wages and Salaries by Industry, Monthly (M)
-    - table_name: T20700B
-      description: Table 2.7B. Wages and Salaries by Industry, Monthly (M)
-    - table_name: T20801
-      description: Table 2.8.1. Percent Change From Preceding Period in Real Personal Consumption Expenditures by Major Type of Product, Monthly (M)
-    - table_name: T20802
-      description: Table 2.8.2. Contributions to Percent Change in Real Personal Consumption Expenditures by Major Type of Product, Monthly (M)
-    - table_name: T20803
-      description: Table 2.8.3. Real Personal Consumption Expenditures by Major Type of Product, Monthly, Quantity Indexes (M)
-    - table_name: T20804
-      description: Table 2.8.4. Price Indexes for Personal Consumption Expenditures by Major Type of Product, Monthly (M)
-    - table_name: T20805
-      description: Table 2.8.5. Personal Consumption Expenditures by Major Type of Product, Monthly (M)
-    - table_name: T20806
-      description: Table 2.8.6. Real Personal Consumption Expenditures by Major Type of Product, Monthly, Chained Dollars (M)
-    - table_name: T20807
-      description: Table 2.8.7. Percent Change From Preceding Period in Prices for Personal Consumption Expenditures by Major Type of Product, Monthly (M)
-    - table_name: T20808
-      description: Table 2.8.8. Contributions to Percent Change in Prices for Personal Consumption Expenditures by Major Type of Product, Monthly (M)
-    - table_name: T20811
-      description: 'Table 2.8.11. Real Personal Consumption Expenditures by Major Type of Product: Percent Change from Month One Year Ago (M)'
-    - table_name: T20900
-      description: Table 2.9. Personal Income and Its Disposition by Households and by Nonprofit Institutions Serving Households (A)
-    - table_name: T21000
-      description: Table 2.10. Distributions of Personal and Disposable Income for Households (A)
-    - table_name: T30100
-      description: Table 3.1. Government Current Receipts and Expenditures (A) (Q)
-    - table_name: T30200
-      description: Table 3.2. Federal Government Current Receipts and Expenditures (A) (Q)
-    - table_name: T30300
-      description: Table 3.3. State and Local Government Current Receipts and Expenditures (A) (Q)
-    - table_name: T30400
-      description: Table 3.4. Personal Current Tax Receipts (A)
-    - table_name: T30500
-      description: Table 3.5. Taxes on Production and Imports (A)
-    - table_name: T30600
-      description: Table 3.6. Contributions for Government Social Insurance (A)
-    - table_name: T30700
-      description: Table 3.7. Government Current Transfer Receipts (A)
-    - table_name: T30800
-      description: Table 3.8. Current Surplus of Government Enterprises (A)
-    - table_name: T30901
-      description: Table 3.9.1. Percent Change From Preceding Period in Real Government Consumption Expenditures and Gross Investment (A) (Q)
-    - table_name: T30902
-      description: Table 3.9.2. Contributions to Percent Change in Real Government Consumption Expenditures and Gross Investment (A) (Q)
-    - table_name: T30903
-      description: Table 3.9.3. Real Government Consumption Expenditures and Gross Investment, Quantity Indexes (A) (Q)
-    - table_name: T30904
-      description: Table 3.9.4. Price Indexes for Government Consumption Expenditures and Gross Investment (A) (Q)
-    - table_name: T30905
-      description: Table 3.9.5. Government Consumption Expenditures and Gross Investment (A) (Q)
-    - table_name: T30906
-      description: Table 3.9.6. Real Government Consumption Expenditures and Gross Investment, Chained Dollars (A) (Q)
-    - table_name: T31001
-      description: Table 3.10.1. Percent Change From Preceding Period in Real Government Consumption Expenditures and General Government Gross Output (A) (Q)
-    - table_name: T31003
-      description: Table 3.10.3. Real Government Consumption Expenditures and General Government Gross Output, Quantity Indexes (A) (Q)
-    - table_name: T31004
-      description: Table 3.10.4. Price Indexes for Government Consumption Expenditures and General Government Gross Output (A) (Q)
-    - table_name: T31005
-      description: Table 3.10.5. Government Consumption Expenditures and General Government Gross Output (A) (Q)
-    - table_name: T31006
-      description: Table 3.10.6. Real Government Consumption Expenditures and General Government Gross Output, Chained Dollars (A) (Q)
-    - table_name: T31101
-      description: Table 3.11.1. Percent Change From Preceding Period in Real National Defense Consumption Expenditures and Gross Investment by Type (A) (Q)
-    - table_name: T31102
-      description: Table 3.11.2. Contributions to Percent Change in National Defense Consumption Expenditures and Gross Investment by Type (A) (Q)
-    - table_name: T31103
-      description: Table 3.11.3. Real National Defense Consumption Expenditures and Gross Investment by Type, Quantity Indexes (A) (Q)
-    - table_name: T31104
-      description: Table 3.11.4. Price Indexes for National Defense Consumption Expenditures and Gross Investment by Type (A) (Q)
-    - table_name: T31105
-      description: Table 3.11.5. National Defense Consumption Expenditures and Gross Investment by Type (A) (Q)
-    - table_name: T31106
-      description: Table 3.11.6. Real National Defense Consumption Expenditures and Gross Investment by Type, Chained Dollars (A) (Q)
-    - table_name: T31200
-      description: Table 3.12. Government Social Benefits (A)
-    - table_name: T31300
-      description: Table 3.13. Subsidies (A)
-    - table_name: T31400
-      description: Table 3.14. Government Social Insurance Funds Current Receipts and Expenditures (A)
-    - table_name: T31501
-      description: Table 3.15.1. Percent Change From Preceding Period in Real Government Consumption Expenditures and Gross Investment by Function (A)
-    - table_name: T31502
-      description: Table 3.15.2. Contributions to Percent Change in Real Government Consumption Expenditures and Gross Investment by Function (A)
-    - table_name: T31503
-      description: Table 3.15.3. Real Government Consumption Expenditures and Gross Investment by Function, Quantity Indexes (A)
-    - table_name: T31504
-      description: Table 3.15.4. Price Indexes for Government Consumption Expenditures and Gross Investment by Function (A)
-    - table_name: T31505
-      description: Table 3.15.5. Government Consumption Expenditures and Gross Investment by Function (A)
-    - table_name: T31506
-      description: Table 3.15.6. Real Government Consumption Expenditures and Gross Investment by Function, Chained Dollars (A)
-    - table_name: T31600
-      description: Table 3.16. Government Current Expenditures by Function (A)
-    - table_name: T31700
-      description: Table 3.17. Selected Government Current and Capital Expenditures by Function (A)
-    - table_name: T31800A
-      description: Table 3.18A. Relation of Federal Government Current Receipts and Expenditures in the National Income and Product Accounts to the Consolidated Cash Statement, Fiscal Years and Quarters (A) (Q)
-    - table_name: T31800B
-      description: Table 3.18B. Relation of Federal Government Current Receipts and Expenditures in the National Income and Product Accounts to the Budget, Fiscal Years and Quarters (A) (Q)
-    - table_name: T31900
-      description: Table 3.19. Relation of State and Local Government Current Receipts and Expenditures in the National Income and Product Accounts to Census Bureau 'Government Finances' Data, Fiscal Years (A)
-    - table_name: T32000
-      description: Table 3.20. State Government Current Receipts and Expenditures (A)
-    - table_name: T32100
-      description: Table 3.21. Local Government Current Receipts and Expenditures (A)
-    - table_name: T40100
-      description: Table 4.1. Foreign Transactions in the National Income and Product Accounts (A) (Q)
-    - table_name: T40201
-      description: Table 4.2.1. Percent Change From Preceding Period in Real Exports and in Real Imports of Goods and Services by Type of Product (A) (Q)
-    - table_name: T40202
-      description: Table 4.2.2. Contributions to Percent Change in Real Exports and Real Imports of Goods and Services by Type of Product (A) (Q)
-    - table_name: T40203A
-      description: Table 4.2.3A. Real Exports and Imports of Goods and Services by Type of Product, Quantity Indexes (A) (Q)
-    - table_name: T40203B
-      description: Table 4.2.3B. Real Exports and Imports of Goods and Services by Type of Product, Quantity Indexes (A) (Q)
-    - table_name: T40204A
-      description: Table 4.2.4A. Price Indexes for Exports and Imports of Goods and Services by Type of Product (A) (Q)
-    - table_name: T40204B
-      description: Table 4.2.4B. Price Indexes for Exports and Imports of Goods and Services by Type of Product (A) (Q)
-    - table_name: T40205A
-      description: Table 4.2.5A. Exports and Imports of Goods and Services by Type of Product (A) (Q)
-    - table_name: T40205B
-      description: Table 4.2.5B. Exports and Imports of Goods and Services by Type of Product (A) (Q)
-    - table_name: T40206B
-      description: Table 4.2.6B. Real Exports and Imports of Goods and Services by Type of Product, Chained Dollars (A) (Q)
-    - table_name: T4030A
-      description: Table 4.3A. Relation of Foreign Transactions in the National Income and Product Accounts to the Corresponding Items in the International Transactions Accounts (A)
-    - table_name: T4030B
-      description: Table 4.3B. Relation of Foreign Transactions in the National Income and Product Accounts to the Corresponding Items in the International Transactions Accounts (A)
-    - table_name: T4030C
-      description: Table 4.3C. Relation of Foreign Transactions in the National Income and Product Accounts to the Corresponding Items in the International Transactions Accounts (A) (Q)
-    - table_name: T50100
-      description: Table 5.1. Saving and Investment by Sector (A) (Q)
-    - table_name: T50203
-      description: Table 5.2.3. Real Gross and Net Domestic Investment by Major Type, Quantity Indexes (A)
-    - table_name: T50205
-      description: Table 5.2.5. Gross and Net Domestic Investment by Major Type (A)
-    - table_name: T50206
-      description: Table 5.2.6. Real Gross and Net Domestic Investment by Major Type, Chained dollars (A)
-    - table_name: T50301
-      description: Table 5.3.1. Percent Change From Preceding Period in Real Private Fixed Investment by Type (A) (Q)
-    - table_name: T50302
-      description: Table 5.3.2. Contributions to Percent Change in Real Private Fixed Investment by Type (A) (Q)
-    - table_name: T50303
-      description: Table 5.3.3. Real Private Fixed Investment by Type, Quantity Indexes (A) (Q)
-    - table_name: T50304
-      description: Table 5.3.4. Price Indexes for Private Fixed Investment by Type (A) (Q)
-    - table_name: T50305
-      description: Table 5.3.5. Private Fixed Investment by Type (A) (Q)
-    - table_name: T50306
-      description: Table 5.3.6. Real Private Fixed Investment by Type, Chained Dollars (A) (Q)
-    - table_name: T50401
-      description: Table 5.4.1. Percent Change From Preceding Period in Real Private Fixed Investment in Structures by Type (A)
-    - table_name: T50402
-      description: Table 5.4.2. Contributions to Percent Change in Real Private Fixed Investment in Structures by Type (A)
-    - table_name: T50403
-      description: Table 5.4.3. Real Private Fixed Investment in Structures by Type, Quantity Indexes (A)
-    - table_name: T50404
-      description: Table 5.4.4. Price Indexes for Private Fixed Investment in Structures by Type (A)
-    - table_name: T50405
-      description: Table 5.4.5. Private Fixed Investment in Structures by Type (A)
-    - table_name: T50406
-      description: Table 5.4.6. Real Private Fixed Investment in Structures by Type, Chained Dollars (A)
-    - table_name: T50501
-      description: Table 5.5.1. Percent Change From Preceding Period in Real Private Fixed Investment in Equipment by Type (A)
-    - table_name: T50502
-      description: Table 5.5.2. Contributions to Percent Change in Real Private Fixed Investment in Equipment by Type (A)
-    - table_name: T50503
-      description: Table 5.5.3. Real Private Fixed Investment in Equipment by Type, Quantity Indexes (A)
-    - table_name: T50504
-      description: Table 5.5.4. Price Indexes for Private Fixed Investment in Equipment by Type (A)
-    - table_name: T50505
-      description: Table 5.5.5. Private Fixed Investment in Equipment by Type (A)
-    - table_name: T50506
-      description: Table 5.5.6. Real Private Fixed Investment in Equipment by Type, Chained Dollars (A)
-    - table_name: T50601
-      description: Table 5.6.1. Percent Change From Preceding Period in Real Private Fixed Investment in Intellectual Property Products by Type (A)
-    - table_name: T50602
-      description: Table 5.6.2. Contributions to Percent Change in Private Fixed Investment in Intellectual Property Products by Type (A)
-    - table_name: T50603
-      description: Table 5.6.3. Real Private Fixed Investment in Intellectual Property Products by Type, Quantity Indexes (A)
-    - table_name: T50604
-      description: Table 5.6.4. Price Indexes for Private Fixed Investment in Intellectual Property Products by Type (A)
-    - table_name: T50605
-      description: Table 5.6.5. Private Fixed Investment in Intellectual Property Products by Type (A)
-    - table_name: T50606
-      description: Table 5.6.6. Real Private Fixed Investment in Intellectual Property Products by Type, Chained Dollars (A)
-    - table_name: T50705A
-      description: Table 5.7.5A. Change in Private Inventories by Industry (A) (Q)
-    - table_name: T50705B
-      description: Table 5.7.5B. Change in Private Inventories by Industry (A) (Q)
-    - table_name: T50706A
-      description: Table 5.7.6A. Change in Real Private Inventories by Industry, Chained Dollars (A) (Q)
-    - table_name: T50706B
-      description: Table 5.7.6B. Change in Real Private Inventories by Industry, Chained Dollars (A) (Q)
-    - table_name: T50805A
-      description: Table 5.8.5A. Private Inventories and Domestic Final Sales of Business by Industry (Q)
-    - table_name: T50805B
-      description: Table 5.8.5B. Private Inventories and Domestic Final Sales by Industry (Q)
-    - table_name: T50806A
-      description: Table 5.8.6A. Real Private Inventories and Real Domestic Final Sales of Business by Industry, Chained Dollars (Q)
-    - table_name: T50806B
-      description: Table 5.8.6B. Real Private Inventories and Real Domestic Final Sales by Industry, Chained Dollars (Q)
-    - table_name: T50809A
-      description: Table 5.8.9A. Implicit Price Deflators for Private Inventories by Industry (Q)
-    - table_name: T50809B
-      description: Table 5.8.9B. Implicit Price Deflators for Private Inventories by Industry (Q)
-    - table_name: T50903
-      description: Table 5.9.3. Real Gross Government Fixed Investment by Type, Quantity Indexes (A)
-    - table_name: T50904
-      description: Table 5.9.4. Price Indexes for Gross Government Fixed Investment by Type (A)
-    - table_name: T50905
-      description: Table 5.9.5. Gross Government Fixed Investment by Type (A)
-    - table_name: T50906
-      description: Table 5.9.6. Real Gross Government Fixed Investment by Type, Chained Dollars (A)
-    - table_name: T51000
-      description: Table 5.10. Changes in Net Stock of Produced Assets (Fixed Assets and Inventories) (A)
-    - table_name: T51100
-      description: Table 5.11. Capital Transfers Paid and Received, by Sector and by Type (A)
-    - table_name: T60100B
-      description: Table 6.1B. National Income Without Capital Consumption Adjustment by Industry (A) (Q)
-    - table_name: T60100C
-      description: Table 6.1C. National Income Without Capital Consumption Adjustment by Industry (A) (Q)
-    - table_name: T60100D
-      description: Table 6.1D. National Income Without Capital Consumption Adjustment by Industry (A) (Q)
-    - table_name: T60200A
-      description: Table 6.2A. Compensation of Employees by Industry (A)
-    - table_name: T60200B
-      description: Table 6.2B. Compensation of Employees by Industry (A)
-    - table_name: T60200C
-      description: Table 6.2C. Compensation of Employees by Industry (A)
-    - table_name: T60200D
-      description: Table 6.2D. Compensation of Employees by Industry (A)
-    - table_name: T60300A
-      description: Table 6.3A. Wages and Salaries by Industry (A)
-    - table_name: T60300B
-      description: Table 6.3B. Wages and Salaries by Industry (A)
-    - table_name: T60300C
-      description: Table 6.3C. Wages and Salaries by Industry (A)
-    - table_name: T60300D
-      description: Table 6.3D. Wages and Salaries by Industry (A)
-    - table_name: T60400A
-      description: Table 6.4A. Full-Time and Part-Time Employees by Industry (A)
-    - table_name: T60400B
-      description: Table 6.4B. Full-Time and Part-Time Employees by Industry (A)
-    - table_name: T60400C
-      description: Table 6.4C. Full-Time and Part-Time Employees by Industry (A)
-    - table_name: T60400D
-      description: Table 6.4D. Full-Time and Part-Time Employees by Industry (A)
-    - table_name: T60500A
-      description: Table 6.5A. Full-Time Equivalent Employees by Industry (A)
-    - table_name: T60500B
-      description: Table 6.5B. Full-Time Equivalent Employees by Industry (A)
-    - table_name: T60500C
-      description: Table 6.5C. Full-Time Equivalent Employees by Industry (A)
-    - table_name: T60500D
-      description: Table 6.5D. Full-Time Equivalent Employees by Industry (A)
-    - table_name: T60600A
-      description: Table 6.6A. Wages and Salaries Per Full-Time Equivalent Employee by Industry (A)
-    - table_name: T60600B
-      description: Table 6.6B. Wages and Salaries Per Full-Time Equivalent Employee by Industry (A)
-    - table_name: T60600C
-      description: Table 6.6C. Wages and Salaries Per Full-Time Equivalent Employee by Industry (A)
-    - table_name: T60600D
-      description: Table 6.6D. Wages and Salaries Per Full-Time Equivalent Employee by Industry (A)
-    - table_name: T60700A
-      description: Table 6.7A. Self-Employed Persons by Industry (A)
-    - table_name: T60700B
-      description: Table 6.7B. Self-Employed Persons by Industry (A)
-    - table_name: T60700C
-      description: Table 6.7C. Self-Employed Persons by Industry (A)
-    - table_name: T60700D
-      description: Table 6.7D. Self-Employed Persons by Industry (A)
-    - table_name: T60800A
-      description: Table 6.8A. Persons Engaged in Production by Industry (A)
-    - table_name: T60800B
-      description: Table 6.8B. Persons Engaged in Production by Industry (A)
-    - table_name: T60800C
-      description: Table 6.8C. Persons Engaged in Production by Industry (A)
-    - table_name: T60800D
-      description: Table 6.8D. Persons Engaged in Production by Industry (A)
-    - table_name: T60900B
-      description: Table 6.9B. Hours Worked by Full-Time and Part-Time Employees by Industry (A)
-    - table_name: T60900C
-      description: Table 6.9C. Hours Worked by Full-Time and Part-Time Employees by Industry (A)
-    - table_name: T60900D
-      description: Table 6.9D. Hours Worked by Full-Time and Part-Time Employees by Industry (A)
-    - table_name: T61000B
-      description: Table 6.10B. Employer Contributions for Government Social Insurance by Industry (A)
-    - table_name: T61000C
-      description: Table 6.10C. Employer Contributions for Government Social Insurance by Industry (A)
-    - table_name: T61000D
-      description: Table 6.10D. Employer Contributions for Government Social Insurance by Industry (A)
-    - table_name: T61100A
-      description: Table 6.11A. Employer Contributions for Employee Pension and Insurance Funds by Industry and by Type (A)
-    - table_name: T61100B
-      description: Table 6.11B. Employer Contributions for Employee Pension and Insurance Funds by Industry and by Type (A)
-    - table_name: T61100C
-      description: Table 6.11C. Employer Contributions for Employee Pension and Insurance Funds by Industry and by Type (A)
-    - table_name: T61100D
-      description: Table 6.11D. Employer Contributions for Employee Pension and Insurance Funds by Industry and by Type (A)
-    - table_name: T61200A
-      description: Table 6.12A. Nonfarm Proprietors' Income by Industry (A)
-    - table_name: T61200B
-      description: Table 6.12B. Nonfarm Proprietors' Income by Industry (A)
-    - table_name: T61200C
-      description: Table 6.12C. Nonfarm Proprietors' Income by Industry (A)
-    - table_name: T61200D
-      description: Table 6.12D. Nonfarm Proprietors' Income by Industry (A)
-    - table_name: T61300A
-      description: Table 6.13A. Noncorporate Capital Consumption Allowances by Industry (A)
-    - table_name: T61300B
-      description: Table 6.13B. Noncorporate Capital Consumption Allowances by Industry (A)
-    - table_name: T61300C
-      description: Table 6.13C. Noncorporate Capital Consumption Allowances by Industry (A)
-    - table_name: T61300D
-      description: Table 6.13D. Noncorporate Capital Consumption Allowances by Industry (A)
-    - table_name: T61400A
-      description: Table 6.14A. Inventory Valuation Adjustment to Nonfarm Incomes by Legal Form of Organization and by Industry (A)
-    - table_name: T61400B
-      description: Table 6.14B. Inventory Valuation Adjustment to Nonfarm Incomes by Legal Form of Organization and by Industry (A)
-    - table_name: T61400C
-      description: Table 6.14C. Inventory Valuation Adjustment to Nonfarm Incomes by Legal Form of Organization and by Industry (A)
-    - table_name: T61400D
-      description: Table 6.14D. Inventory Valuation Adjustment to Nonfarm Incomes by Legal Form of Organization and by Industry (A)
-    - table_name: T61500A
-      description: Table 6.15A. Net Interest by Industry (A)
-    - table_name: T61500B
-      description: Table 6.15B. Net Interest by Industry (A)
-    - table_name: T61500C
-      description: Table 6.15C. Net Interest by Industry (A)
-    - table_name: T61500D
-      description: Table 6.15D. Net Interest by Industry (A)
-    - table_name: T61600A
-      description: Table 6.16A. Corporate Profits by Industry (A)
-    - table_name: T61600B
-      description: Table 6.16B. Corporate Profits by Industry (A) (Q)
-    - table_name: T61600C
-      description: Table 6.16C. Corporate Profits by Industry (A) (Q)
-    - table_name: T61600D
-      description: Table 6.16D. Corporate Profits by Industry (A) (Q)
-    - table_name: T61700A
-      description: Table 6.17A. Corporate Profits Before Tax by Industry (A)
-    - table_name: T61700B
-      description: Table 6.17B. Corporate Profits Before Tax by Industry (A)
-    - table_name: T61700C
-      description: Table 6.17C. Corporate Profits Before Tax by Industry (A)
-    - table_name: T61700D
-      description: Table 6.17D. Corporate Profits Before Tax by Industry (A)
-    - table_name: T61800A
-      description: Table 6.18A. Taxes on Corporate Income by Industry (A)
-    - table_name: T61800B
-      description: Table 6.18B. Taxes on Corporate Income by Industry (A)
-    - table_name: T61800C
-      description: Table 6.18C. Taxes on Corporate Income by Industry (A)
-    - table_name: T61800D
-      description: Table 6.18D. Taxes on Corporate Income by Industry (A)
-    - table_name: T61900A
-      description: Table 6.19A. Corporate Profits After Tax by Industry (A)
-    - table_name: T61900B
-      description: Table 6.19B. Corporate Profits After Tax by Industry (A)
-    - table_name: T61900C
-      description: Table 6.19C. Corporate Profits After Tax by Industry (A)
-    - table_name: T61900D
-      description: Table 6.19D. Corporate Profits After Tax by Industry (A)
-    - table_name: T62000A
-      description: Table 6.20A. Net Corporate Dividend Payments by Industry (A)
-    - table_name: T62000B
-      description: Table 6.20B. Net Corporate Dividend Payments by Industry (A)
-    - table_name: T62000C
-      description: Table 6.20C. Net Corporate Dividend Payments by Industry (A)
-    - table_name: T62000D
-      description: Table 6.20D. Net Corporate Dividend Payments by Industry (A)
-    - table_name: T62100A
-      description: Table 6.21A. Undistributed Corporate Profits by Industry (A)
-    - table_name: T62100B
-      description: Table 6.21B. Undistributed Corporate Profits by Industry (A)
-    - table_name: T62100C
-      description: Table 6.21C. Undistributed Corporate Profits by Industry (A)
-    - table_name: T62100D
-      description: Table 6.21D. Undistributed Corporate Profits by Industry (A)
-    - table_name: T62200A
-      description: Table 6.22A. Corporate Capital Consumption Allowances by Industry (A)
-    - table_name: T62200B
-      description: Table 6.22B. Corporate Capital Consumption Allowances by Industry (A)
-    - table_name: T62200C
-      description: Table 6.22C. Corporate Capital Consumption Allowances by Industry (A)
-    - table_name: T62200D
-      description: Table 6.22D. Corporate Capital Consumption Allowances by Industry (A)
-    - table_name: T70100
-      description: Table 7.1. Selected Per Capita Product and Income Series in Current and Chained Dollars (A) (Q)
-    - table_name: T70201A
-      description: Table 7.2.1A. Percent Change From Preceding Period in Real Auto Output (A) (Q)
-    - table_name: T70201B
-      description: Table 7.2.1B. Percent Change From Preceding Period in Real Motor Vehicle Output (A) (Q)
-    - table_name: T70203A
-      description: Table 7.2.3A. Real Auto Output, Quantity Indexes (A) (Q)
-    - table_name: T70203B
-      description: Table 7.2.3B. Real Motor Vehicle Output, Quantity Indexes (A) (Q)
-    - table_name: T70204A
-      description: Table 7.2.4A. Price Indexes for Auto Output (A) (Q)
-    - table_name: T70204B
-      description: Table 7.2.4B. Price Indexes for Motor Vehicle Output (A) (Q)
-    - table_name: T70205A
-      description: Table 7.2.5A. Auto Output (A) (Q)
-    - table_name: T70205B
-      description: Table 7.2.5B. Motor Vehicle Output (A) (Q)
-    - table_name: T70206B
-      description: Table 7.2.6B. Real Motor Vehicle Output, Chained Dollars (A) (Q)
-    - table_name: T70303
-      description: Table 7.3.3. Real Farm Sector Output, Real Gross Value Added, and Real Net Value Added, Quantity Indexes (A)
-    - table_name: T70304
-      description: Table 7.3.4. Price Indexes for Farm Sector Output, Gross Value Added, and Net Value Added (A)
-    - table_name: T70305
-      description: Table 7.3.5. Farm Sector Output, Gross Value Added, and Net Value Added (A)
-    - table_name: T70306
-      description: Table 7.3.6. Real Farm Sector Output, Real Gross Value Added, and Real Net Value Added, Chained Dollars (A)
-    - table_name: T70403
-      description: Table 7.4.3. Real Housing Sector Output, Real Gross Value Added, and Real Net Value Added, Quantity Indexes (A)
-    - table_name: T70404
-      description: Table 7.4.4. Price Indexes for Housing Sector Output, Gross Value Added, and Net Value Added (A)
-    - table_name: T70405
-      description: Table 7.4.5. Housing Sector Output, Gross Value Added, and Net Value Added (A)
-    - table_name: T70406
-      description: Table 7.4.6. Real Housing Sector Output, Real Gross Value Added, and Real Net Value Added, Chained Dollars (A)
-    - table_name: T70500
-      description: Table 7.5. Consumption of Fixed Capital by Legal Form of Organization and Type of Income (A) (Q)
-    - table_name: T70600
-      description: Table 7.6. Capital Consumption Adjustment by Legal Form of Organization and Type of Adjustment (A)
-    - table_name: T70700
-      description: Table 7.7. Business Current Transfer Payments by Type (A)
-    - table_name: T70800
-      description: Table 7.8. Supplements to Wages and Salaries by Type (A)
-    - table_name: T70900
-      description: Table 7.9. Rental Income of Persons by Legal Form of Organization and by Type of Income (A)
-    - table_name: T71000
-      description: Table 7.10. Dividends Paid and Received by Sector (A)
-    - table_name: T71100
-      description: Table 7.11. Interest Paid and Received by Sector and Legal Form of Organization (A)
-    - table_name: T71200
-      description: Table 7.12. Imputations in the National Income and Product Accounts (A)
-    - table_name: T71300
-      description: Table 7.13. Relation of Consumption of Fixed Capital in the National Income and Product Accounts to Depreciation and Amortization as Published by the Internal Revenue Service (A)
-    - table_name: T71400
-      description: Table 7.14. Relation of Nonfarm Proprietors' Income in the National Income and Product Accounts to Corresponding Measures as Published by the Internal Revenue Service (A)
-    - table_name: T71500
-      description: Table 7.15. Relation of Net Farm Income in the National Income and Product Accounts to Net Farm Income as Published by the U.S. Department of Agriculture (A)
-    - table_name: T71600
-      description: Table 7.16. Relation of Corporate Profits, Taxes, and Dividends in the National Income and Product Accounts to Corresponding Measures as Published by the Internal Revenue Service (A)
-    - table_name: T71700
-      description: Table 7.17. Relation of Monetary Interest Paid and Received in the National Income and Product Accounts to Corresponding Measures as Published by the Internal Revenue Service (A)
-    - table_name: T71800
-      description: Table 7.18. Relation of Wages and Salaries in the National Income and Product Accounts to Wages and Salaries as Published by the Bureau of Labor Statistics (A)
-    - table_name: T71900
-      description: Table 7.19. Comparison of Income and Outlays of Nonprofit Institutions Serving Households with Revenue and Expenses as Published by the Internal Revenue Service (A)
-    - table_name: T72000
-      description: Table 7.20. Transactions of Defined Benefit and Defined Contribution Pension Plans (A)
-    - table_name: T72100
-      description: Table 7.21. Transactions of Defined Benefit Pension Plans (A)
-    - table_name: T72200
-      description: Table 7.22. Transactions of Private Defined Benefit Pension Plans (A)
-    - table_name: T72300
-      description: Table 7.23. Transactions of Federal Government Defined Benefit Pension Plans (A)
-    - table_name: T72400
-      description: Table 7.24. Transactions of State and Local Government Defined Benefit Pension Plans (A)
-    - table_name: T72500
-      description: Table 7.25. Transactions of Defined Contribution Pension Plans (A)
-    - table_name: T80103
-      description: Table 8.1.3. Real Gross Domestic Product, Quantity Indexes, Not Seasonally Adjusted (Q)
-    - table_name: T80104
-      description: Table 8.1.4. Price Indexes for Gross Domestic Product, Not Seasonally Adjusted (Q)
-    - table_name: T80105
-      description: Table 8.1.5. Gross Domestic Product, Not Seasonally Adjusted (Q)
-    - table_name: T80106
-      description: Table 8.1.6. Real Gross Domestic Product, Chained Dollars, Not Seasonally Adjusted (Q)
-    - table_name: T80111
-      description: 'Table 8.1.11. Real Gross Domestic Product: Percent Change From Quarter One Year Ago, Not Seasonally Adjusted (Q)'
-    - table_name: T80200
-      description: Table 8.2. Gross Domestic Income by Type of Income, Not Seasonally Adjusted (Q)
-    - table_name: T80300
-      description: Table 8.3. Federal Government Current Receipts and Expenditures, Not Seasonally Adjusted (Q)
-    - table_name: T80400
-      description: Table 8.4. State and Local Government Current Receipts and Expenditures, Not Seasonally Adjusted (Q)
-- name: NIUnderlyingDetail
-  description: Standard NI underlying detail tables
-  frequency: A
-  api:
-    userid: BEA_KEY
-    method: GETDATA
-    datasetname: NIUnderlyingDetail
     resultformat: JSON
+    tables:
+    - description: Table 1.1.1. Percent Change From Preceding Period in Real Gross
+        Domestic Product (A) (Q)
+      table_name: T10101
+    - description: Table 1.1.2. Contributions to Percent Change in Real Gross Domestic
+        Product (A) (Q)
+      table_name: T10102
+    - description: Table 1.1.3. Real Gross Domestic Product, Quantity Indexes (A)
+        (Q)
+      table_name: T10103
+    - description: Table 1.1.4. Price Indexes for Gross Domestic Product (A) (Q)
+      table_name: T10104
+    - description: Table 1.1.5. Gross Domestic Product (A) (Q)
+      table_name: T10105
+    - description: Table 1.1.6. Real Gross Domestic Product, Chained Dollars (A) (Q)
+      table_name: T10106
+    - description: Table 1.1.7. Percent Change From Preceding Period in Prices for
+        Gross Domestic Product (A) (Q)
+      table_name: T10107
+    - description: Table 1.1.8. Contributions to Percent Change in the Gross Domestic
+        Product Price Index (A) (Q)
+      table_name: T10108
+    - description: Table 1.1.9. Implicit Price Deflators for Gross Domestic Product
+        (A) (Q)
+      table_name: T10109
+    - description: Table 1.1.10. Percentage Shares of Gross Domestic Product (A) (Q)
+      table_name: T10110
+    - description: 'Table 1.1.11. Real Gross Domestic Product: Percent Change From
+        Quarter One Year Ago (Q)'
+      table_name: T10111
+    - description: Table 1.2.1. Percent Change From Preceding Period in Real Gross
+        Domestic Product by Major Type of Product (A) (Q)
+      table_name: T10201
+    - description: Table 1.2.2. Contributions to Percent Change in Real Gross Domestic
+        Product by Major Type of Product (A) (Q)
+      table_name: T10202
+    - description: Table 1.2.3. Real Gross Domestic Product by Major Type of Product,
+        Quantity Indexes (A) (Q)
+      table_name: T10203
+    - description: Table 1.2.4. Price Indexes for Gross Domestic Product by Major
+        Type of Product (A) (Q)
+      table_name: T10204
+    - description: Table 1.2.5. Gross Domestic Product by Major Type of Product (A)
+        (Q)
+      table_name: T10205
+    - description: Table 1.2.6. Real Gross Domestic Product by Major Type of Product,
+        Chained Dollars (A) (Q)
+      table_name: T10206
+    - description: Table 1.3.1. Percent Change From Preceding Period in Real Gross
+        Value Added by Sector (A) (Q)
+      table_name: T10301
+    - description: Table 1.3.3. Real Gross Value Added by Sector, Quantity Indexes
+        (A) (Q)
+      table_name: T10303
+    - description: Table 1.3.4. Price Indexes for Gross Value Added by Sector (A)
+        (Q)
+      table_name: T10304
+    - description: Table 1.3.5. Gross Value Added by Sector (A) (Q)
+      table_name: T10305
+    - description: Table 1.3.6. Real Gross Value Added by Sector, Chained Dollars
+        (A) (Q)
+      table_name: T10306
+    - description: Table 1.4.1. Percent Change From Preceding Period in Real Gross
+        Domestic Product, Real Gross Domestic Purchases, and Real Final Sales to Domestic
+        Purchasers (A) (Q)
+      table_name: T10401
+    - description: Table 1.4.3. Real Gross Domestic Product, Real Gross Domestic Purchases,
+        and Real Final Sales to Domestic Purchasers, Quantity Indexes (A) (Q)
+      table_name: T10403
+    - description: Table 1.4.4. Price Indexes for Gross Domestic Product, Gross Domestic
+        Purchases, and Final Sales to Domestic Purchasers (A) (Q)
+      table_name: T10404
+    - description: Table 1.4.5. Relation of Gross Domestic Product, Gross Domestic
+        Purchases, and Final Sales to Domestic Purchasers (A) (Q)
+      table_name: T10405
+    - description: Table 1.4.6. Relation of Real Gross Domestic Product, Real Gross
+        Domestic Purchases, and Real Final Sales to Domestic Purchasers, Chained Dollars
+        (A) (Q)
+      table_name: T10406
+    - description: Table 1.5.1. Percent Change From Preceding Period in Real Gross
+        Domestic Product, Expanded Detail (A) (Q)
+      table_name: T10501
+    - description: Table 1.5.2. Contributions to Percent Change in Real Gross Domestic
+        Product, Expanded Detail (A) (Q)
+      table_name: T10502
+    - description: Table 1.5.3. Real Gross Domestic Product, Expanded Detail, Quantity
+        Indexes (A) (Q)
+      table_name: T10503
+    - description: Table 1.5.4. Price Indexes for Gross Domestic Product, Expanded
+        Detail (A) (Q)
+      table_name: T10504
+    - description: Table 1.5.5. Gross Domestic Product, Expanded Detail (A) (Q)
+      table_name: T10505
+    - description: Table 1.5.6. Real Gross Domestic Product, Expanded Detail, Chained
+        Dollars (A) (Q)
+      table_name: T10506
+    - description: Table 1.6.4. Price Indexes for Gross Domestic Purchases (A) (Q)
+      table_name: T10604
+    - description: Table 1.6.7. Percent Change From Preceding Period in Prices for
+        Gross Domestic Purchases (A) (Q)
+      table_name: T10607
+    - description: Table 1.6.8. Contributions to Percent Change in the Gross Domestic
+        Purchases Price Index (A) (Q)
+      table_name: T10608
+    - description: Table 1.7.1. Percent Change From Preceding Period in Real Gross
+        Domestic Product, Real Gross National Product, and Real Net National Product
+        (A) (Q)
+      table_name: T10701
+    - description: Table 1.7.3. Real Gross Domestic Product, Real Gross National Product,
+        and Real Net National Product, Quantity Indexes (A) (Q)
+      table_name: T10703
+    - description: Table 1.7.4. Price Indexes for Gross Domestic Product, Gross National
+        Product, and Net National Product (A) (Q)
+      table_name: T10704
+    - description: Table 1.7.5. Relation of Gross Domestic Product, Gross National
+        Product, Net National Product, National Income, and Personal Income (A) (Q)
+      table_name: T10705
+    - description: Table 1.7.6. Relation of Real Gross Domestic Product, Real Gross
+        National Product, and Real Net National Product, Chained Dollars (A) (Q)
+      table_name: T10706
+    - description: Table 1.8.3. Command-Basis Real Gross Domestic Product and Gross
+        National Product, Quantity Indexes (A) (Q)
+      table_name: T10803
+    - description: Table 1.8.6. Command-Basis Real Gross Domestic Product and Gross
+        National Product, Chained Dollars (A) (Q)
+      table_name: T10806
+    - description: Table 1.9.3. Real Net Value Added by Sector, Quantity Indexes (A)
+      table_name: T10903
+    - description: Table 1.9.4. Price Indexes for Net Value Added by Sector (A)
+      table_name: T10904
+    - description: Table 1.9.5. Net Value Added by Sector (A)
+      table_name: T10905
+    - description: Table 1.9.6. Real Net Value Added by Sector, Chained Dollars (A)
+      table_name: T10906
+    - description: Table 1.10. Gross Domestic Income by Type of Income (A) (Q)
+      table_name: T11000
+    - description: Table 1.11. Percentage Shares of Gross Domestic Income (A)
+      table_name: T11100
+    - description: Table 1.12. National Income by Type of Income (A) (Q)
+      table_name: T11200
+    - description: Table 1.13. National Income by Sector, Legal Form of Organization,
+        and Type of Income (A)
+      table_name: T11300
+    - description: Table 1.14. Gross Value Added of Domestic Corporate Business in
+        Current Dollars and Gross Value Added of Nonfinancial Domestic Corporate Business
+        in Current and Chained Dollars (A) (Q)
+      table_name: T11400
+    - description: Table 1.15. Price, Costs, and Profit Per Unit of Real Gross Value
+        Added of Nonfinancial Domestic Corporate Business (A) (Q)
+      table_name: T11500
+    - description: Table 1.16. Sources and Uses of Private Enterprise Income (A)
+      table_name: T11600
+    - description: Table 1.17.1. Percent Change From Preceding Period in Real Gross
+        Domestic Product, Real Gross Domestic Income, and Other Major NIPA Aggregates
+        (A) (Q)
+      table_name: T11701
+    - description: Table 1.17.5. Gross Domestic Product, Gross Domestic Income, and
+        Other Major NIPA Aggregates (A) (Q)
+      table_name: T11705
+    - description: Table 1.17.6. Real Gross Domestic Product, Real Gross Domestic
+        Income, and Other Major NIPA Aggregates, Chained Dollars (A) (Q)
+      table_name: T11706
+    - description: Table 2.1. Personal Income and Its Disposition (A) (Q)
+      table_name: T20100
+    - description: Table 2.2A. Wages and Salaries by Industry (A) (Q)
+      table_name: T20200A
+    - description: Table 2.2B. Wages and Salaries by Industry (A) (Q)
+      table_name: T20200B
+    - description: Table 2.3.1. Percent Change From Preceding Period in Real Personal
+        Consumption Expenditures by Major Type of Product (A) (Q)
+      table_name: T20301
+    - description: Table 2.3.2. Contributions to Percent Change in Real Personal Consumption
+        Expenditures by Major Type of Product (A) (Q)
+      table_name: T20302
+    - description: Table 2.3.3. Real Personal Consumption Expenditures by Major Type
+        of Product, Quantity Indexes (A) (Q)
+      table_name: T20303
+    - description: Table 2.3.4. Price Indexes for Personal Consumption Expenditures
+        by Major Type of Product (A) (Q)
+      table_name: T20304
+    - description: Table 2.3.5. Personal Consumption Expenditures by Major Type of
+        Product (A) (Q)
+      table_name: T20305
+    - description: Table 2.3.6. Real Personal Consumption Expenditures by Major Type
+        of Product, Chained Dollars (A) (Q)
+      table_name: T20306
+    - description: Table 2.3.7. Percent Change From Preceding Period in Prices for
+        Personal Consumption Expenditures by Major Type of Product (A) (Q)
+      table_name: T20307
+    - description: Table 2.3.8. Contributions to Percent Change in Prices for Personal
+        Consumption Expenditures by Major Type of Product (A) (Q)
+      table_name: T20308
+    - description: 'Table 2.3.11. Real Personal Consumption Expenditures by Major
+        Type of Product: Percent Change from Quarter One Year Ago (Q)'
+      table_name: T20311
+    - description: Table 2.4.1. Percent Change From Preceding Period in Real Personal
+        Consumption Expenditures by Type of Product (A) (Q)
+      table_name: T20401
+    - description: Table 2.4.2. Contributions to Percent Change in Real Personal Consumption
+        Expenditures by Type of Product (A) (Q)
+      table_name: T20402
+    - description: Table 2.4.3. Real Personal Consumption Expenditures by Type of
+        Product, Quantity Indexes (A) (Q)
+      table_name: T20403
+    - description: Table 2.4.4. Price Indexes for Personal Consumption Expenditures
+        by Type of Product (A) (Q)
+      table_name: T20404
+    - description: Table 2.4.5. Personal Consumption Expenditures by Type of Product
+        (A) (Q)
+      table_name: T20405
+    - description: Table 2.4.6. Real Personal Consumption Expenditures by Type of
+        Product, Chained Dollars (A) (Q)
+      table_name: T20406
+    - description: Table 2.4.7. Percent Change From Preceding Period in Prices for
+        Personal Consumption Expenditures by Type of Product (A) (Q)
+      table_name: T20407
+    - description: Table 2.4.8. Contributions to Percent Change in Prices for Personal
+        Consumption Expenditures by Type of Product (A) (Q)
+      table_name: T20408
+    - description: Table 2.5.3. Real Personal Consumption Expenditures by Function,
+        Quantity Indexes (A)
+      table_name: T20503
+    - description: Table 2.5.4. Price Indexes for Personal Consumption Expenditures
+        by Function (A)
+      table_name: T20504
+    - description: Table 2.5.5. Personal Consumption Expenditures by Function (A)
+      table_name: T20505
+    - description: Table 2.5.6. Real Personal Consumption Expenditures by Function,
+        Chained Dollars (A)
+      table_name: T20506
+    - description: Table 2.6. Personal Income and Its Disposition, Monthly (M)
+      table_name: T20600
+    - description: Table 2.7A. Wages and Salaries by Industry, Monthly (M)
+      table_name: T20700A
+    - description: Table 2.7B. Wages and Salaries by Industry, Monthly (M)
+      table_name: T20700B
+    - description: Table 2.8.1. Percent Change From Preceding Period in Real Personal
+        Consumption Expenditures by Major Type of Product, Monthly (M)
+      table_name: T20801
+    - description: Table 2.8.2. Contributions to Percent Change in Real Personal Consumption
+        Expenditures by Major Type of Product, Monthly (M)
+      table_name: T20802
+    - description: Table 2.8.3. Real Personal Consumption Expenditures by Major Type
+        of Product, Monthly, Quantity Indexes (M)
+      table_name: T20803
+    - description: Table 2.8.4. Price Indexes for Personal Consumption Expenditures
+        by Major Type of Product, Monthly (M)
+      table_name: T20804
+    - description: Table 2.8.5. Personal Consumption Expenditures by Major Type of
+        Product, Monthly (M)
+      table_name: T20805
+    - description: Table 2.8.6. Real Personal Consumption Expenditures by Major Type
+        of Product, Monthly, Chained Dollars (M)
+      table_name: T20806
+    - description: Table 2.8.7. Percent Change From Preceding Period in Prices for
+        Personal Consumption Expenditures by Major Type of Product, Monthly (M)
+      table_name: T20807
+    - description: Table 2.8.8. Contributions to Percent Change in Prices for Personal
+        Consumption Expenditures by Major Type of Product, Monthly (M)
+      table_name: T20808
+    - description: 'Table 2.8.11. Real Personal Consumption Expenditures by Major
+        Type of Product: Percent Change from Month One Year Ago (M)'
+      table_name: T20811
+    - description: Table 2.9. Personal Income and Its Disposition by Households and
+        by Nonprofit Institutions Serving Households (A)
+      table_name: T20900
+    - description: Table 2.10. Distributions of Personal and Disposable Income for
+        Households (A)
+      table_name: T21000
+    - description: Table 3.1. Government Current Receipts and Expenditures (A) (Q)
+      table_name: T30100
+    - description: Table 3.2. Federal Government Current Receipts and Expenditures
+        (A) (Q)
+      table_name: T30200
+    - description: Table 3.3. State and Local Government Current Receipts and Expenditures
+        (A) (Q)
+      table_name: T30300
+    - description: Table 3.4. Personal Current Tax Receipts (A)
+      table_name: T30400
+    - description: Table 3.5. Taxes on Production and Imports (A)
+      table_name: T30500
+    - description: Table 3.6. Contributions for Government Social Insurance (A)
+      table_name: T30600
+    - description: Table 3.7. Government Current Transfer Receipts (A)
+      table_name: T30700
+    - description: Table 3.8. Current Surplus of Government Enterprises (A)
+      table_name: T30800
+    - description: Table 3.9.1. Percent Change From Preceding Period in Real Government
+        Consumption Expenditures and Gross Investment (A) (Q)
+      table_name: T30901
+    - description: Table 3.9.2. Contributions to Percent Change in Real Government
+        Consumption Expenditures and Gross Investment (A) (Q)
+      table_name: T30902
+    - description: Table 3.9.3. Real Government Consumption Expenditures and Gross
+        Investment, Quantity Indexes (A) (Q)
+      table_name: T30903
+    - description: Table 3.9.4. Price Indexes for Government Consumption Expenditures
+        and Gross Investment (A) (Q)
+      table_name: T30904
+    - description: Table 3.9.5. Government Consumption Expenditures and Gross Investment
+        (A) (Q)
+      table_name: T30905
+    - description: Table 3.9.6. Real Government Consumption Expenditures and Gross
+        Investment, Chained Dollars (A) (Q)
+      table_name: T30906
+    - description: Table 3.10.1. Percent Change From Preceding Period in Real Government
+        Consumption Expenditures and General Government Gross Output (A) (Q)
+      table_name: T31001
+    - description: Table 3.10.3. Real Government Consumption Expenditures and General
+        Government Gross Output, Quantity Indexes (A) (Q)
+      table_name: T31003
+    - description: Table 3.10.4. Price Indexes for Government Consumption Expenditures
+        and General Government Gross Output (A) (Q)
+      table_name: T31004
+    - description: Table 3.10.5. Government Consumption Expenditures and General Government
+        Gross Output (A) (Q)
+      table_name: T31005
+    - description: Table 3.10.6. Real Government Consumption Expenditures and General
+        Government Gross Output, Chained Dollars (A) (Q)
+      table_name: T31006
+    - description: Table 3.11.1. Percent Change From Preceding Period in Real National
+        Defense Consumption Expenditures and Gross Investment by Type (A) (Q)
+      table_name: T31101
+    - description: Table 3.11.2. Contributions to Percent Change in National Defense
+        Consumption Expenditures and Gross Investment by Type (A) (Q)
+      table_name: T31102
+    - description: Table 3.11.3. Real National Defense Consumption Expenditures and
+        Gross Investment by Type, Quantity Indexes (A) (Q)
+      table_name: T31103
+    - description: Table 3.11.4. Price Indexes for National Defense Consumption Expenditures
+        and Gross Investment by Type (A) (Q)
+      table_name: T31104
+    - description: Table 3.11.5. National Defense Consumption Expenditures and Gross
+        Investment by Type (A) (Q)
+      table_name: T31105
+    - description: Table 3.11.6. Real National Defense Consumption Expenditures and
+        Gross Investment by Type, Chained Dollars (A) (Q)
+      table_name: T31106
+    - description: Table 3.12. Government Social Benefits (A)
+      table_name: T31200
+    - description: Table 3.13. Subsidies (A)
+      table_name: T31300
+    - description: Table 3.14. Government Social Insurance Funds Current Receipts
+        and Expenditures (A)
+      table_name: T31400
+    - description: Table 3.15.1. Percent Change From Preceding Period in Real Government
+        Consumption Expenditures and Gross Investment by Function (A)
+      table_name: T31501
+    - description: Table 3.15.2. Contributions to Percent Change in Real Government
+        Consumption Expenditures and Gross Investment by Function (A)
+      table_name: T31502
+    - description: Table 3.15.3. Real Government Consumption Expenditures and Gross
+        Investment by Function, Quantity Indexes (A)
+      table_name: T31503
+    - description: Table 3.15.4. Price Indexes for Government Consumption Expenditures
+        and Gross Investment by Function (A)
+      table_name: T31504
+    - description: Table 3.15.5. Government Consumption Expenditures and Gross Investment
+        by Function (A)
+      table_name: T31505
+    - description: Table 3.15.6. Real Government Consumption Expenditures and Gross
+        Investment by Function, Chained Dollars (A)
+      table_name: T31506
+    - description: Table 3.16. Government Current Expenditures by Function (A)
+      table_name: T31600
+    - description: Table 3.17. Selected Government Current and Capital Expenditures
+        by Function (A)
+      table_name: T31700
+    - description: Table 3.18A. Relation of Federal Government Current Receipts and
+        Expenditures in the National Income and Product Accounts to the Consolidated
+        Cash Statement, Fiscal Years and Quarters (A) (Q)
+      table_name: T31800A
+    - description: Table 3.18B. Relation of Federal Government Current Receipts and
+        Expenditures in the National Income and Product Accounts to the Budget, Fiscal
+        Years and Quarters (A) (Q)
+      table_name: T31800B
+    - description: Table 3.19. Relation of State and Local Government Current Receipts
+        and Expenditures in the National Income and Product Accounts to Census Bureau
+        'Government Finances' Data, Fiscal Years (A)
+      table_name: T31900
+    - description: Table 3.20. State Government Current Receipts and Expenditures
+        (A)
+      table_name: T32000
+    - description: Table 3.21. Local Government Current Receipts and Expenditures
+        (A)
+      table_name: T32100
+    - description: Table 4.1. Foreign Transactions in the National Income and Product
+        Accounts (A) (Q)
+      table_name: T40100
+    - description: Table 4.2.1. Percent Change From Preceding Period in Real Exports
+        and in Real Imports of Goods and Services by Type of Product (A) (Q)
+      table_name: T40201
+    - description: Table 4.2.2. Contributions to Percent Change in Real Exports and
+        Real Imports of Goods and Services by Type of Product (A) (Q)
+      table_name: T40202
+    - description: Table 4.2.3A. Real Exports and Imports of Goods and Services by
+        Type of Product, Quantity Indexes (A) (Q)
+      table_name: T40203A
+    - description: Table 4.2.3B. Real Exports and Imports of Goods and Services by
+        Type of Product, Quantity Indexes (A) (Q)
+      table_name: T40203B
+    - description: Table 4.2.4A. Price Indexes for Exports and Imports of Goods and
+        Services by Type of Product (A) (Q)
+      table_name: T40204A
+    - description: Table 4.2.4B. Price Indexes for Exports and Imports of Goods and
+        Services by Type of Product (A) (Q)
+      table_name: T40204B
+    - description: Table 4.2.5A. Exports and Imports of Goods and Services by Type
+        of Product (A) (Q)
+      table_name: T40205A
+    - description: Table 4.2.5B. Exports and Imports of Goods and Services by Type
+        of Product (A) (Q)
+      table_name: T40205B
+    - description: Table 4.2.6B. Real Exports and Imports of Goods and Services by
+        Type of Product, Chained Dollars (A) (Q)
+      table_name: T40206B
+    - description: Table 4.3A. Relation of Foreign Transactions in the National Income
+        and Product Accounts to the Corresponding Items in the International Transactions
+        Accounts (A)
+      table_name: T4030A
+    - description: Table 4.3B. Relation of Foreign Transactions in the National Income
+        and Product Accounts to the Corresponding Items in the International Transactions
+        Accounts (A)
+      table_name: T4030B
+    - description: Table 4.3C. Relation of Foreign Transactions in the National Income
+        and Product Accounts to the Corresponding Items in the International Transactions
+        Accounts (A) (Q)
+      table_name: T4030C
+    - description: Table 5.1. Saving and Investment by Sector (A) (Q)
+      table_name: T50100
+    - description: Table 5.2.3. Real Gross and Net Domestic Investment by Major Type,
+        Quantity Indexes (A)
+      table_name: T50203
+    - description: Table 5.2.5. Gross and Net Domestic Investment by Major Type (A)
+      table_name: T50205
+    - description: Table 5.2.6. Real Gross and Net Domestic Investment by Major Type,
+        Chained dollars (A)
+      table_name: T50206
+    - description: Table 5.3.1. Percent Change From Preceding Period in Real Private
+        Fixed Investment by Type (A) (Q)
+      table_name: T50301
+    - description: Table 5.3.2. Contributions to Percent Change in Real Private Fixed
+        Investment by Type (A) (Q)
+      table_name: T50302
+    - description: Table 5.3.3. Real Private Fixed Investment by Type, Quantity Indexes
+        (A) (Q)
+      table_name: T50303
+    - description: Table 5.3.4. Price Indexes for Private Fixed Investment by Type
+        (A) (Q)
+      table_name: T50304
+    - description: Table 5.3.5. Private Fixed Investment by Type (A) (Q)
+      table_name: T50305
+    - description: Table 5.3.6. Real Private Fixed Investment by Type, Chained Dollars
+        (A) (Q)
+      table_name: T50306
+    - description: Table 5.4.1. Percent Change From Preceding Period in Real Private
+        Fixed Investment in Structures by Type (A)
+      table_name: T50401
+    - description: Table 5.4.2. Contributions to Percent Change in Real Private Fixed
+        Investment in Structures by Type (A)
+      table_name: T50402
+    - description: Table 5.4.3. Real Private Fixed Investment in Structures by Type,
+        Quantity Indexes (A)
+      table_name: T50403
+    - description: Table 5.4.4. Price Indexes for Private Fixed Investment in Structures
+        by Type (A)
+      table_name: T50404
+    - description: Table 5.4.5. Private Fixed Investment in Structures by Type (A)
+      table_name: T50405
+    - description: Table 5.4.6. Real Private Fixed Investment in Structures by Type,
+        Chained Dollars (A)
+      table_name: T50406
+    - description: Table 5.5.1. Percent Change From Preceding Period in Real Private
+        Fixed Investment in Equipment by Type (A)
+      table_name: T50501
+    - description: Table 5.5.2. Contributions to Percent Change in Real Private Fixed
+        Investment in Equipment by Type (A)
+      table_name: T50502
+    - description: Table 5.5.3. Real Private Fixed Investment in Equipment by Type,
+        Quantity Indexes (A)
+      table_name: T50503
+    - description: Table 5.5.4. Price Indexes for Private Fixed Investment in Equipment
+        by Type (A)
+      table_name: T50504
+    - description: Table 5.5.5. Private Fixed Investment in Equipment by Type (A)
+      table_name: T50505
+    - description: Table 5.5.6. Real Private Fixed Investment in Equipment by Type,
+        Chained Dollars (A)
+      table_name: T50506
+    - description: Table 5.6.1. Percent Change From Preceding Period in Real Private
+        Fixed Investment in Intellectual Property Products by Type (A)
+      table_name: T50601
+    - description: Table 5.6.2. Contributions to Percent Change in Private Fixed Investment
+        in Intellectual Property Products by Type (A)
+      table_name: T50602
+    - description: Table 5.6.3. Real Private Fixed Investment in Intellectual Property
+        Products by Type, Quantity Indexes (A)
+      table_name: T50603
+    - description: Table 5.6.4. Price Indexes for Private Fixed Investment in Intellectual
+        Property Products by Type (A)
+      table_name: T50604
+    - description: Table 5.6.5. Private Fixed Investment in Intellectual Property
+        Products by Type (A)
+      table_name: T50605
+    - description: Table 5.6.6. Real Private Fixed Investment in Intellectual Property
+        Products by Type, Chained Dollars (A)
+      table_name: T50606
+    - description: Table 5.7.5A. Change in Private Inventories by Industry (A) (Q)
+      table_name: T50705A
+    - description: Table 5.7.5B. Change in Private Inventories by Industry (A) (Q)
+      table_name: T50705B
+    - description: Table 5.7.6A. Change in Real Private Inventories by Industry, Chained
+        Dollars (A) (Q)
+      table_name: T50706A
+    - description: Table 5.7.6B. Change in Real Private Inventories by Industry, Chained
+        Dollars (A) (Q)
+      table_name: T50706B
+    - description: Table 5.8.5A. Private Inventories and Domestic Final Sales of Business
+        by Industry (Q)
+      table_name: T50805A
+    - description: Table 5.8.5B. Private Inventories and Domestic Final Sales by Industry
+        (Q)
+      table_name: T50805B
+    - description: Table 5.8.6A. Real Private Inventories and Real Domestic Final
+        Sales of Business by Industry, Chained Dollars (Q)
+      table_name: T50806A
+    - description: Table 5.8.6B. Real Private Inventories and Real Domestic Final
+        Sales by Industry, Chained Dollars (Q)
+      table_name: T50806B
+    - description: Table 5.8.9A. Implicit Price Deflators for Private Inventories
+        by Industry (Q)
+      table_name: T50809A
+    - description: Table 5.8.9B. Implicit Price Deflators for Private Inventories
+        by Industry (Q)
+      table_name: T50809B
+    - description: Table 5.9.3. Real Gross Government Fixed Investment by Type, Quantity
+        Indexes (A)
+      table_name: T50903
+    - description: Table 5.9.4. Price Indexes for Gross Government Fixed Investment
+        by Type (A)
+      table_name: T50904
+    - description: Table 5.9.5. Gross Government Fixed Investment by Type (A)
+      table_name: T50905
+    - description: Table 5.9.6. Real Gross Government Fixed Investment by Type, Chained
+        Dollars (A)
+      table_name: T50906
+    - description: Table 5.10. Changes in Net Stock of Produced Assets (Fixed Assets
+        and Inventories) (A)
+      table_name: T51000
+    - description: Table 5.11. Capital Transfers Paid and Received, by Sector and
+        by Type (A)
+      table_name: T51100
+    - description: Table 6.1B. National Income Without Capital Consumption Adjustment
+        by Industry (A) (Q)
+      table_name: T60100B
+    - description: Table 6.1C. National Income Without Capital Consumption Adjustment
+        by Industry (A) (Q)
+      table_name: T60100C
+    - description: Table 6.1D. National Income Without Capital Consumption Adjustment
+        by Industry (A) (Q)
+      table_name: T60100D
+    - description: Table 6.2A. Compensation of Employees by Industry (A)
+      table_name: T60200A
+    - description: Table 6.2B. Compensation of Employees by Industry (A)
+      table_name: T60200B
+    - description: Table 6.2C. Compensation of Employees by Industry (A)
+      table_name: T60200C
+    - description: Table 6.2D. Compensation of Employees by Industry (A)
+      table_name: T60200D
+    - description: Table 6.3A. Wages and Salaries by Industry (A)
+      table_name: T60300A
+    - description: Table 6.3B. Wages and Salaries by Industry (A)
+      table_name: T60300B
+    - description: Table 6.3C. Wages and Salaries by Industry (A)
+      table_name: T60300C
+    - description: Table 6.3D. Wages and Salaries by Industry (A)
+      table_name: T60300D
+    - description: Table 6.4A. Full-Time and Part-Time Employees by Industry (A)
+      table_name: T60400A
+    - description: Table 6.4B. Full-Time and Part-Time Employees by Industry (A)
+      table_name: T60400B
+    - description: Table 6.4C. Full-Time and Part-Time Employees by Industry (A)
+      table_name: T60400C
+    - description: Table 6.4D. Full-Time and Part-Time Employees by Industry (A)
+      table_name: T60400D
+    - description: Table 6.5A. Full-Time Equivalent Employees by Industry (A)
+      table_name: T60500A
+    - description: Table 6.5B. Full-Time Equivalent Employees by Industry (A)
+      table_name: T60500B
+    - description: Table 6.5C. Full-Time Equivalent Employees by Industry (A)
+      table_name: T60500C
+    - description: Table 6.5D. Full-Time Equivalent Employees by Industry (A)
+      table_name: T60500D
+    - description: Table 6.6A. Wages and Salaries Per Full-Time Equivalent Employee
+        by Industry (A)
+      table_name: T60600A
+    - description: Table 6.6B. Wages and Salaries Per Full-Time Equivalent Employee
+        by Industry (A)
+      table_name: T60600B
+    - description: Table 6.6C. Wages and Salaries Per Full-Time Equivalent Employee
+        by Industry (A)
+      table_name: T60600C
+    - description: Table 6.6D. Wages and Salaries Per Full-Time Equivalent Employee
+        by Industry (A)
+      table_name: T60600D
+    - description: Table 6.7A. Self-Employed Persons by Industry (A)
+      table_name: T60700A
+    - description: Table 6.7B. Self-Employed Persons by Industry (A)
+      table_name: T60700B
+    - description: Table 6.7C. Self-Employed Persons by Industry (A)
+      table_name: T60700C
+    - description: Table 6.7D. Self-Employed Persons by Industry (A)
+      table_name: T60700D
+    - description: Table 6.8A. Persons Engaged in Production by Industry (A)
+      table_name: T60800A
+    - description: Table 6.8B. Persons Engaged in Production by Industry (A)
+      table_name: T60800B
+    - description: Table 6.8C. Persons Engaged in Production by Industry (A)
+      table_name: T60800C
+    - description: Table 6.8D. Persons Engaged in Production by Industry (A)
+      table_name: T60800D
+    - description: Table 6.9B. Hours Worked by Full-Time and Part-Time Employees by
+        Industry (A)
+      table_name: T60900B
+    - description: Table 6.9C. Hours Worked by Full-Time and Part-Time Employees by
+        Industry (A)
+      table_name: T60900C
+    - description: Table 6.9D. Hours Worked by Full-Time and Part-Time Employees by
+        Industry (A)
+      table_name: T60900D
+    - description: Table 6.10B. Employer Contributions for Government Social Insurance
+        by Industry (A)
+      table_name: T61000B
+    - description: Table 6.10C. Employer Contributions for Government Social Insurance
+        by Industry (A)
+      table_name: T61000C
+    - description: Table 6.10D. Employer Contributions for Government Social Insurance
+        by Industry (A)
+      table_name: T61000D
+    - description: Table 6.11A. Employer Contributions for Employee Pension and Insurance
+        Funds by Industry and by Type (A)
+      table_name: T61100A
+    - description: Table 6.11B. Employer Contributions for Employee Pension and Insurance
+        Funds by Industry and by Type (A)
+      table_name: T61100B
+    - description: Table 6.11C. Employer Contributions for Employee Pension and Insurance
+        Funds by Industry and by Type (A)
+      table_name: T61100C
+    - description: Table 6.11D. Employer Contributions for Employee Pension and Insurance
+        Funds by Industry and by Type (A)
+      table_name: T61100D
+    - description: Table 6.12A. Nonfarm Proprietors' Income by Industry (A)
+      table_name: T61200A
+    - description: Table 6.12B. Nonfarm Proprietors' Income by Industry (A)
+      table_name: T61200B
+    - description: Table 6.12C. Nonfarm Proprietors' Income by Industry (A)
+      table_name: T61200C
+    - description: Table 6.12D. Nonfarm Proprietors' Income by Industry (A)
+      table_name: T61200D
+    - description: Table 6.13A. Noncorporate Capital Consumption Allowances by Industry
+        (A)
+      table_name: T61300A
+    - description: Table 6.13B. Noncorporate Capital Consumption Allowances by Industry
+        (A)
+      table_name: T61300B
+    - description: Table 6.13C. Noncorporate Capital Consumption Allowances by Industry
+        (A)
+      table_name: T61300C
+    - description: Table 6.13D. Noncorporate Capital Consumption Allowances by Industry
+        (A)
+      table_name: T61300D
+    - description: Table 6.14A. Inventory Valuation Adjustment to Nonfarm Incomes
+        by Legal Form of Organization and by Industry (A)
+      table_name: T61400A
+    - description: Table 6.14B. Inventory Valuation Adjustment to Nonfarm Incomes
+        by Legal Form of Organization and by Industry (A)
+      table_name: T61400B
+    - description: Table 6.14C. Inventory Valuation Adjustment to Nonfarm Incomes
+        by Legal Form of Organization and by Industry (A)
+      table_name: T61400C
+    - description: Table 6.14D. Inventory Valuation Adjustment to Nonfarm Incomes
+        by Legal Form of Organization and by Industry (A)
+      table_name: T61400D
+    - description: Table 6.15A. Net Interest by Industry (A)
+      table_name: T61500A
+    - description: Table 6.15B. Net Interest by Industry (A)
+      table_name: T61500B
+    - description: Table 6.15C. Net Interest by Industry (A)
+      table_name: T61500C
+    - description: Table 6.15D. Net Interest by Industry (A)
+      table_name: T61500D
+    - description: Table 6.16A. Corporate Profits by Industry (A)
+      table_name: T61600A
+    - description: Table 6.16B. Corporate Profits by Industry (A) (Q)
+      table_name: T61600B
+    - description: Table 6.16C. Corporate Profits by Industry (A) (Q)
+      table_name: T61600C
+    - description: Table 6.16D. Corporate Profits by Industry (A) (Q)
+      table_name: T61600D
+    - description: Table 6.17A. Corporate Profits Before Tax by Industry (A)
+      table_name: T61700A
+    - description: Table 6.17B. Corporate Profits Before Tax by Industry (A)
+      table_name: T61700B
+    - description: Table 6.17C. Corporate Profits Before Tax by Industry (A)
+      table_name: T61700C
+    - description: Table 6.17D. Corporate Profits Before Tax by Industry (A)
+      table_name: T61700D
+    - description: Table 6.18A. Taxes on Corporate Income by Industry (A)
+      table_name: T61800A
+    - description: Table 6.18B. Taxes on Corporate Income by Industry (A)
+      table_name: T61800B
+    - description: Table 6.18C. Taxes on Corporate Income by Industry (A)
+      table_name: T61800C
+    - description: Table 6.18D. Taxes on Corporate Income by Industry (A)
+      table_name: T61800D
+    - description: Table 6.19A. Corporate Profits After Tax by Industry (A)
+      table_name: T61900A
+    - description: Table 6.19B. Corporate Profits After Tax by Industry (A)
+      table_name: T61900B
+    - description: Table 6.19C. Corporate Profits After Tax by Industry (A)
+      table_name: T61900C
+    - description: Table 6.19D. Corporate Profits After Tax by Industry (A)
+      table_name: T61900D
+    - description: Table 6.20A. Net Corporate Dividend Payments by Industry (A)
+      table_name: T62000A
+    - description: Table 6.20B. Net Corporate Dividend Payments by Industry (A)
+      table_name: T62000B
+    - description: Table 6.20C. Net Corporate Dividend Payments by Industry (A)
+      table_name: T62000C
+    - description: Table 6.20D. Net Corporate Dividend Payments by Industry (A)
+      table_name: T62000D
+    - description: Table 6.21A. Undistributed Corporate Profits by Industry (A)
+      table_name: T62100A
+    - description: Table 6.21B. Undistributed Corporate Profits by Industry (A)
+      table_name: T62100B
+    - description: Table 6.21C. Undistributed Corporate Profits by Industry (A)
+      table_name: T62100C
+    - description: Table 6.21D. Undistributed Corporate Profits by Industry (A)
+      table_name: T62100D
+    - description: Table 6.22A. Corporate Capital Consumption Allowances by Industry
+        (A)
+      table_name: T62200A
+    - description: Table 6.22B. Corporate Capital Consumption Allowances by Industry
+        (A)
+      table_name: T62200B
+    - description: Table 6.22C. Corporate Capital Consumption Allowances by Industry
+        (A)
+      table_name: T62200C
+    - description: Table 6.22D. Corporate Capital Consumption Allowances by Industry
+        (A)
+      table_name: T62200D
+    - description: Table 7.1. Selected Per Capita Product and Income Series in Current
+        and Chained Dollars (A) (Q)
+      table_name: T70100
+    - description: Table 7.2.1A. Percent Change From Preceding Period in Real Auto
+        Output (A) (Q)
+      table_name: T70201A
+    - description: Table 7.2.1B. Percent Change From Preceding Period in Real Motor
+        Vehicle Output (A) (Q)
+      table_name: T70201B
+    - description: Table 7.2.3A. Real Auto Output, Quantity Indexes (A) (Q)
+      table_name: T70203A
+    - description: Table 7.2.3B. Real Motor Vehicle Output, Quantity Indexes (A) (Q)
+      table_name: T70203B
+    - description: Table 7.2.4A. Price Indexes for Auto Output (A) (Q)
+      table_name: T70204A
+    - description: Table 7.2.4B. Price Indexes for Motor Vehicle Output (A) (Q)
+      table_name: T70204B
+    - description: Table 7.2.5A. Auto Output (A) (Q)
+      table_name: T70205A
+    - description: Table 7.2.5B. Motor Vehicle Output (A) (Q)
+      table_name: T70205B
+    - description: Table 7.2.6B. Real Motor Vehicle Output, Chained Dollars (A) (Q)
+      table_name: T70206B
+    - description: Table 7.3.3. Real Farm Sector Output, Real Gross Value Added, and
+        Real Net Value Added, Quantity Indexes (A)
+      table_name: T70303
+    - description: Table 7.3.4. Price Indexes for Farm Sector Output, Gross Value
+        Added, and Net Value Added (A)
+      table_name: T70304
+    - description: Table 7.3.5. Farm Sector Output, Gross Value Added, and Net Value
+        Added (A)
+      table_name: T70305
+    - description: Table 7.3.6. Real Farm Sector Output, Real Gross Value Added, and
+        Real Net Value Added, Chained Dollars (A)
+      table_name: T70306
+    - description: Table 7.4.3. Real Housing Sector Output, Real Gross Value Added,
+        and Real Net Value Added, Quantity Indexes (A)
+      table_name: T70403
+    - description: Table 7.4.4. Price Indexes for Housing Sector Output, Gross Value
+        Added, and Net Value Added (A)
+      table_name: T70404
+    - description: Table 7.4.5. Housing Sector Output, Gross Value Added, and Net
+        Value Added (A)
+      table_name: T70405
+    - description: Table 7.4.6. Real Housing Sector Output, Real Gross Value Added,
+        and Real Net Value Added, Chained Dollars (A)
+      table_name: T70406
+    - description: Table 7.5. Consumption of Fixed Capital by Legal Form of Organization
+        and Type of Income (A) (Q)
+      table_name: T70500
+    - description: Table 7.6. Capital Consumption Adjustment by Legal Form of Organization
+        and Type of Adjustment (A)
+      table_name: T70600
+    - description: Table 7.7. Business Current Transfer Payments by Type (A)
+      table_name: T70700
+    - description: Table 7.8. Supplements to Wages and Salaries by Type (A)
+      table_name: T70800
+    - description: Table 7.9. Rental Income of Persons by Legal Form of Organization
+        and by Type of Income (A)
+      table_name: T70900
+    - description: Table 7.10. Dividends Paid and Received by Sector (A)
+      table_name: T71000
+    - description: Table 7.11. Interest Paid and Received by Sector and Legal Form
+        of Organization (A)
+      table_name: T71100
+    - description: Table 7.12. Imputations in the National Income and Product Accounts
+        (A)
+      table_name: T71200
+    - description: Table 7.13. Relation of Consumption of Fixed Capital in the National
+        Income and Product Accounts to Depreciation and Amortization as Published
+        by the Internal Revenue Service (A)
+      table_name: T71300
+    - description: Table 7.14. Relation of Nonfarm Proprietors' Income in the National
+        Income and Product Accounts to Corresponding Measures as Published by the
+        Internal Revenue Service (A)
+      table_name: T71400
+    - description: Table 7.15. Relation of Net Farm Income in the National Income
+        and Product Accounts to Net Farm Income as Published by the U.S. Department
+        of Agriculture (A)
+      table_name: T71500
+    - description: Table 7.16. Relation of Corporate Profits, Taxes, and Dividends
+        in the National Income and Product Accounts to Corresponding Measures as Published
+        by the Internal Revenue Service (A)
+      table_name: T71600
+    - description: Table 7.17. Relation of Monetary Interest Paid and Received in
+        the National Income and Product Accounts to Corresponding Measures as Published
+        by the Internal Revenue Service (A)
+      table_name: T71700
+    - description: Table 7.18. Relation of Wages and Salaries in the National Income
+        and Product Accounts to Wages and Salaries as Published by the Bureau of Labor
+        Statistics (A)
+      table_name: T71800
+    - description: Table 7.19. Comparison of Income and Outlays of Nonprofit Institutions
+        Serving Households with Revenue and Expenses as Published by the Internal
+        Revenue Service (A)
+      table_name: T71900
+    - description: Table 7.20. Transactions of Defined Benefit and Defined Contribution
+        Pension Plans (A)
+      table_name: T72000
+    - description: Table 7.21. Transactions of Defined Benefit Pension Plans (A)
+      table_name: T72100
+    - description: Table 7.22. Transactions of Private Defined Benefit Pension Plans
+        (A)
+      table_name: T72200
+    - description: Table 7.23. Transactions of Federal Government Defined Benefit
+        Pension Plans (A)
+      table_name: T72300
+    - description: Table 7.24. Transactions of State and Local Government Defined
+        Benefit Pension Plans (A)
+      table_name: T72400
+    - description: Table 7.25. Transactions of Defined Contribution Pension Plans
+        (A)
+      table_name: T72500
+    - description: Table 8.1.3. Real Gross Domestic Product, Quantity Indexes, Not
+        Seasonally Adjusted (Q)
+      table_name: T80103
+    - description: Table 8.1.4. Price Indexes for Gross Domestic Product, Not Seasonally
+        Adjusted (Q)
+      table_name: T80104
+    - description: Table 8.1.5. Gross Domestic Product, Not Seasonally Adjusted (Q)
+      table_name: T80105
+    - description: Table 8.1.6. Real Gross Domestic Product, Chained Dollars, Not
+        Seasonally Adjusted (Q)
+      table_name: T80106
+    - description: 'Table 8.1.11. Real Gross Domestic Product: Percent Change From
+        Quarter One Year Ago, Not Seasonally Adjusted (Q)'
+      table_name: T80111
+    - description: Table 8.2. Gross Domestic Income by Type of Income, Not Seasonally
+        Adjusted (Q)
+      table_name: T80200
+    - description: Table 8.3. Federal Government Current Receipts and Expenditures,
+        Not Seasonally Adjusted (Q)
+      table_name: T80300
+    - description: Table 8.4. State and Local Government Current Receipts and Expenditures,
+        Not Seasonally Adjusted (Q)
+      table_name: T80400
+    userid: BEA_KEY
+  description: Standard NIPA tables
+  frequency: A
+  name: NIPA
+- api:
+    datasetname: NIUnderlyingDetail
+    method: GETDATA
     parameters:
     - name: Frequency
       value: ''
@@ -686,157 +917,208 @@ bea_datasets:
       value: Specify Value
     - name: Year
       value: ''
-    tables:
-    - table_name: U001A
-      description: Table 1AU. Real Manufacturing and Trade Inventories, Seasonally Adjusted, End of Period [Chained 1996 dollars, 1967-96, SIC] (Q) (M)
-    - table_name: U001A2
-      description: Table 1AU2. Real Manufacturing and Trade Inventories, Seasonally Adjusted, End of Period [Chained 2017 dollars, 1967-96, SIC] (Q) (M)
-    - table_name: U001B
-      description: Table 1BU. Real Manufacturing and Trade Inventories, Seasonally Adjusted, End of Period [Chained 2017 dollars, 1997 forward, NAICS] (A) (Q) (M)
-    - table_name: U001BC
-      description: Table 1BUC. Current Dollar Manufacturing and Trade Inventories, Seasonally Adjusted, End of Period [1997 forward, NAICS] (A) (Q) (M)
-    - table_name: U002AU
-      description: Table 2AU. Real Manufacturing and Trade Sales, Seasonally Adjusted at Monthly Rate [Chained 1996 dollars, 1967-96, SIC] (Q) (M)
-    - table_name: U002AUI
-      description: Table 2AUI. Implicit Price Deflators for Manufacturing and Trade Sales [Index base 1996, 1967-96, SIC] (Q) (M)
-    - table_name: U002BU
-      description: Table 2BU. Real Manufacturing and Trade Sales, Seasonally Adjusted at Monthly Rate [Chained 2017 dollars, 1997 forward, NAICS] (A) (Q) (M)
-    - table_name: U002BUI
-      description: Table 2BUI. Implicit Price Deflators for Manufacturing and Trade Sales [Index base 2017, 1997 forward, NAICS] (A) (Q) (M)
-    - table_name: U003AU
-      description: Table 3AU. Real Inventory-Sales Ratios for Manufacturing and Trade, Seasonally Adjusted [Based on chained 1996 dollars, 1967-96, SIC] (Q) (M)
-    - table_name: U003BU
-      description: Table 3BU. Real Inventory-Sales Ratios for Manufacturing and Trade, Seasonally Adjusted [Based on chained 2017 dollars, 1997 forward, NAICS] (A) (Q) (M)
-    - table_name: U004A1
-      description: Table 4AU1. Real Manufacturing Inventories, by Stage of Fabrication (Materials and supplies), Seasonally Adjusted, End of Period [Chained 2017 dollars, 1967-97 forward, SIC] (Q) (M)
-    - table_name: U004A2
-      description: Table 4AU2. Real Manufacturing Inventories, by Stage of Fabrication (Works-in-process), Seasonally Adjusted, End of Period [Chained 2017 dollars, 1967-97 forward, SIC] (Q) (M)
-    - table_name: U004A3
-      description: Table 4AU3. Real Manufacturing Inventories, by Stage of Fabrication (Finished goods), Seasonally Adjusted, End of Period [Chained 2017 dollars, 1967-97 forward, SIC] (Q) (M)
-    - table_name: U004B1
-      description: Table 4BU1. Real Manufacturing Inventories, by Stage of Fabrication (Materials and supplies), Seasonally Adjusted, End of Period [Chained 2017 dollars, 1997 forward, NAICS] (A) (Q) (M)
-    - table_name: U004B2
-      description: Table 4BU2. Real Manufacturing Inventories, by Stage of Fabrication (Work-in-process), Seasonally Adjusted, End of Period [Chained 2017 dollars, 1997 forward, NAICS] (A) (Q) (M)
-    - table_name: U004B3
-      description: Table 4BU3. Real Manufacturing Inventories, by Stage of Fabrication (Finished goods), Seasonally Adjusted, End of Period [Chained 2017 dollars, 1997 forward, NAICS] (A) (Q) (M)
-    - table_name: U00500
-      description: Table 5U. BEA Retail and Food Service Sales (A) (Q) (M)
-    - table_name: U00600
-      description: Table 6U. Real BEA Retail and Food Service Sales (A) (Q) (M)
-    - table_name: U00700
-      description: Table 7U. Chain-Type Price Indexes for BEA Retail and Food Service Sales (A) (Q) (M)
-    - table_name: U20304
-      description: Table 2.3.4U. Price Indexes for Personal Consumption Expenditures by Major Type of Product and by Major Function (A) (Q) (M)
-    - table_name: U20305
-      description: Table 2.3.5U. Personal Consumption Expenditures by Major Type of Product and by Major Function (A) (Q) (M)
-    - table_name: U20306
-      description: Table 2.3.6U. Real Personal Consumption Expenditures by Major Type of Product and by Major Function (A) (Q) (M)
-    - table_name: U20403
-      description: Table 2.4.3U. Real Personal Consumption Expenditures by Type of Product, Quantity Indexes (A) (Q) (M)
-    - table_name: U20404
-      description: Table 2.4.4U. Price Indexes for Personal Consumption Expenditures by Type of Product (A) (Q) (M)
-    - table_name: U20405
-      description: Table 2.4.5U. Personal Consumption Expenditures by Type of Product (A) (Q) (M)
-    - table_name: U20406
-      description: Table 2.4.6U. Real Personal Consumption Expenditures by Type of Product, Chained Dollars (A) (Q) (M)
-    - table_name: U30400
-      description: Table 3.4U. Personal Current Tax Receipts (Q)
-    - table_name: U30500
-      description: Table 3.5U. Taxes on Production and Imports (Q)
-    - table_name: U30600
-      description: Table 3.6U. Contributions for Government Social Insurance (Q)
-    - table_name: U30700
-      description: Table 3.7U. Government Current Transfer Receipts (Q)
-    - table_name: U30800
-      description: Table 3.8U. Current Surplus of Government Enterprises (Q)
-    - table_name: U31200
-      description: Table 3.12U. Government Social Benefits (Q)
-    - table_name: U31300
-      description: Table 3.13U. Subsidies (Q)
-    - table_name: U32400
-      description: Table 3.24U. Federal Grants-in-Aid to State and Local Governments (Q)
-    - table_name: U32500
-      description: Table 3.25U. Compensation of General Government Employees (A)
-    - table_name: U4030B
-      description: Table 4.3BU. Relation of Foreign Transactions in the National Income and Product Accounts to the Corresponding Items in the International Transactions Accounts (Q)
-    - table_name: U50203
-      description: Table 5.2.3U. Real Gross and Net Domestic Investment by Major Type, Quantity Indexes (Q)
-    - table_name: U50205
-      description: Table 5.2.5U. Gross and Net Domestic Investment by Major Type (Q)
-    - table_name: U50206
-      description: Table 5.2.6U. Real Gross and Net Domestic Investment by Major Type, Chained Dollars (Q)
-    - table_name: U50404
-      description: Table 5.4.4U. Price Indexes for Private Fixed Investment in Structures by Type (A) (Q)
-    - table_name: U50405
-      description: Table 5.4.5U. Private Fixed Investment in Structures by Type (A) (Q)
-    - table_name: U50406
-      description: Table 5.4.6U. Private Fixed Investment in Structures by Type, Chained dollars (A) (Q)
-    - table_name: U50504
-      description: Table 5.5.4U. Price Indexes for Private Fixed Investment in Equipment  by Type (A) (Q)
-    - table_name: U50505
-      description: Table 5.5.5U. Private Fixed Investment in Equipment  by Type (A) (Q)
-    - table_name: U50506
-      description: Table 5.5.6U. Private Fixed Investment in Equipment  by Type, Chained dollars (A) (Q)
-    - table_name: U50705AM1
-      description: Table 5.7.5AM1. Change in Private Inventories by Industry (M)
-    - table_name: U50705AM2
-      description: Table 5.7.5AM2. Change in Book Value by Industry (M)
-    - table_name: U50705AM3
-      description: Table 5.7.5AM3. Inventory Valuation Adjustment by Industry (M)
-    - table_name: U50705AU1
-      description: Table 5.7.5AU1. Change in Private Inventories by Industry (Q)
-    - table_name: U50705AU2
-      description: Table 5.7.5AU2. Change in Book Value by Industry (Q)
-    - table_name: U50705AU3
-      description: Table 5.7.5AU3. Inventory Valuation Adjustment by Industry (Q)
-    - table_name: U50705BM1
-      description: Table 5.7.5BM1. Change in Private Inventories by Industry (M)
-    - table_name: U50705BM2
-      description: Table 5.7.5BM2. Change in Book Value by Industry (M)
-    - table_name: U50705BM3
-      description: Table 5.7.5BM3. Inventory Valuation Adjustment by Industry (M)
-    - table_name: U50705BU1
-      description: Table 5.7.5BU1. Change in Private Inventories by Industry (A) (Q)
-    - table_name: U50705BU2
-      description: Table 5.7.5BU2. Change in Book Value by Industry (A) (Q)
-    - table_name: U50705BU3
-      description: Table 5.7.5BU3. Inventory Valuation Adjustment by Industry (A) (Q)
-    - table_name: U50706AM
-      description: Table 5.7.6AM. Change in Real Private Inventories by Industry (M)
-    - table_name: U50706AU
-      description: Table 5.7.6AU. Change in Real Private Inventories by Industry (Q)
-    - table_name: U50706BM
-      description: Table 5.7.6BM. Change in Real Private Inventories by Industry (M)
-    - table_name: U50706BU
-      description: Table 5.7.6BU. Change in Real Private Inventories by Industry (A) (Q)
-    - table_name: U51100
-      description: Table 5.11U. Capital Transfers Paid and Received, by Sector and by Type (Q)
-    - table_name: U70204
-      description: Table 7.2.4U. Price Indexes for Motor Vehicle Output (A) (Q)
-    - table_name: U70205
-      description: Table 7.2.5U. Motor Vehicle Output (A) (Q)
-    - table_name: U70205S
-      description: Table 7.2.5S. Auto and Truck Unit Sales, Production, Inventories, Expenditures, and Price (M)
-    - table_name: U70206
-      description: Table 7.2.6U. Real Motor Vehicle Output, Chained Dollars (A) (Q)
-    - table_name: U90100
-      description: Table 9.1U. Reconciliation of Percent Change in the CPI with Percent Change in the PCE Price Index (Q) (M)
-    - table_name: U90200
-      description: Table 9.2U. Final Sales of Domestic Computers (A) (Q)
-    - table_name: U90300
-      description: Table 9.3U. Gross Domestic Product and Final Sales of Software (A)
-    - table_name: U90400
-      description: Table 9.4U. Software investment and prices (A)
-    - table_name: U90500
-      description: Table 9.5U. Contributions to Percent Change in Real Gross Domestic Product From Final Sales of Computers, Software, and Communications Equipment (A)
-- name: MNE
-  description: Multinational Enterprises
-  frequency: A
-  api:
-    userid: BEA_KEY
-    method: GETDATA
-    datasetname: MNE
     resultformat: JSON
+    tables:
+    - description: Table 1AU. Real Manufacturing and Trade Inventories, Seasonally
+        Adjusted, End of Period [Chained 1996 dollars, 1967-96, SIC] (Q) (M)
+      table_name: U001A
+    - description: Table 1AU2. Real Manufacturing and Trade Inventories, Seasonally
+        Adjusted, End of Period [Chained 2017 dollars, 1967-96, SIC] (Q) (M)
+      table_name: U001A2
+    - description: Table 1BU. Real Manufacturing and Trade Inventories, Seasonally
+        Adjusted, End of Period [Chained 2017 dollars, 1997 forward, NAICS] (A) (Q)
+        (M)
+      table_name: U001B
+    - description: Table 1BUC. Current Dollar Manufacturing and Trade Inventories,
+        Seasonally Adjusted, End of Period [1997 forward, NAICS] (A) (Q) (M)
+      table_name: U001BC
+    - description: Table 2AU. Real Manufacturing and Trade Sales, Seasonally Adjusted
+        at Monthly Rate [Chained 1996 dollars, 1967-96, SIC] (Q) (M)
+      table_name: U002AU
+    - description: Table 2AUI. Implicit Price Deflators for Manufacturing and Trade
+        Sales [Index base 1996, 1967-96, SIC] (Q) (M)
+      table_name: U002AUI
+    - description: Table 2BU. Real Manufacturing and Trade Sales, Seasonally Adjusted
+        at Monthly Rate [Chained 2017 dollars, 1997 forward, NAICS] (A) (Q) (M)
+      table_name: U002BU
+    - description: Table 2BUI. Implicit Price Deflators for Manufacturing and Trade
+        Sales [Index base 2017, 1997 forward, NAICS] (A) (Q) (M)
+      table_name: U002BUI
+    - description: Table 3AU. Real Inventory-Sales Ratios for Manufacturing and Trade,
+        Seasonally Adjusted [Based on chained 1996 dollars, 1967-96, SIC] (Q) (M)
+      table_name: U003AU
+    - description: Table 3BU. Real Inventory-Sales Ratios for Manufacturing and Trade,
+        Seasonally Adjusted [Based on chained 2017 dollars, 1997 forward, NAICS] (A)
+        (Q) (M)
+      table_name: U003BU
+    - description: Table 4AU1. Real Manufacturing Inventories, by Stage of Fabrication
+        (Materials and supplies), Seasonally Adjusted, End of Period [Chained 2017
+        dollars, 1967-97 forward, SIC] (Q) (M)
+      table_name: U004A1
+    - description: Table 4AU2. Real Manufacturing Inventories, by Stage of Fabrication
+        (Works-in-process), Seasonally Adjusted, End of Period [Chained 2017 dollars,
+        1967-97 forward, SIC] (Q) (M)
+      table_name: U004A2
+    - description: Table 4AU3. Real Manufacturing Inventories, by Stage of Fabrication
+        (Finished goods), Seasonally Adjusted, End of Period [Chained 2017 dollars,
+        1967-97 forward, SIC] (Q) (M)
+      table_name: U004A3
+    - description: Table 4BU1. Real Manufacturing Inventories, by Stage of Fabrication
+        (Materials and supplies), Seasonally Adjusted, End of Period [Chained 2017
+        dollars, 1997 forward, NAICS] (A) (Q) (M)
+      table_name: U004B1
+    - description: Table 4BU2. Real Manufacturing Inventories, by Stage of Fabrication
+        (Work-in-process), Seasonally Adjusted, End of Period [Chained 2017 dollars,
+        1997 forward, NAICS] (A) (Q) (M)
+      table_name: U004B2
+    - description: Table 4BU3. Real Manufacturing Inventories, by Stage of Fabrication
+        (Finished goods), Seasonally Adjusted, End of Period [Chained 2017 dollars,
+        1997 forward, NAICS] (A) (Q) (M)
+      table_name: U004B3
+    - description: Table 5U. BEA Retail and Food Service Sales (A) (Q) (M)
+      table_name: U00500
+    - description: Table 6U. Real BEA Retail and Food Service Sales (A) (Q) (M)
+      table_name: U00600
+    - description: Table 7U. Chain-Type Price Indexes for BEA Retail and Food Service
+        Sales (A) (Q) (M)
+      table_name: U00700
+    - description: Table 2.3.4U. Price Indexes for Personal Consumption Expenditures
+        by Major Type of Product and by Major Function (A) (Q) (M)
+      table_name: U20304
+    - description: Table 2.3.5U. Personal Consumption Expenditures by Major Type of
+        Product and by Major Function (A) (Q) (M)
+      table_name: U20305
+    - description: Table 2.3.6U. Real Personal Consumption Expenditures by Major Type
+        of Product and by Major Function (A) (Q) (M)
+      table_name: U20306
+    - description: Table 2.4.3U. Real Personal Consumption Expenditures by Type of
+        Product, Quantity Indexes (A) (Q) (M)
+      table_name: U20403
+    - description: Table 2.4.4U. Price Indexes for Personal Consumption Expenditures
+        by Type of Product (A) (Q) (M)
+      table_name: U20404
+    - description: Table 2.4.5U. Personal Consumption Expenditures by Type of Product
+        (A) (Q) (M)
+      table_name: U20405
+    - description: Table 2.4.6U. Real Personal Consumption Expenditures by Type of
+        Product, Chained Dollars (A) (Q) (M)
+      table_name: U20406
+    - description: Table 3.4U. Personal Current Tax Receipts (Q)
+      table_name: U30400
+    - description: Table 3.5U. Taxes on Production and Imports (Q)
+      table_name: U30500
+    - description: Table 3.6U. Contributions for Government Social Insurance (Q)
+      table_name: U30600
+    - description: Table 3.7U. Government Current Transfer Receipts (Q)
+      table_name: U30700
+    - description: Table 3.8U. Current Surplus of Government Enterprises (Q)
+      table_name: U30800
+    - description: Table 3.12U. Government Social Benefits (Q)
+      table_name: U31200
+    - description: Table 3.13U. Subsidies (Q)
+      table_name: U31300
+    - description: Table 3.24U. Federal Grants-in-Aid to State and Local Governments
+        (Q)
+      table_name: U32400
+    - description: Table 3.25U. Compensation of General Government Employees (A)
+      table_name: U32500
+    - description: Table 4.3BU. Relation of Foreign Transactions in the National Income
+        and Product Accounts to the Corresponding Items in the International Transactions
+        Accounts (Q)
+      table_name: U4030B
+    - description: Table 5.2.3U. Real Gross and Net Domestic Investment by Major Type,
+        Quantity Indexes (Q)
+      table_name: U50203
+    - description: Table 5.2.5U. Gross and Net Domestic Investment by Major Type (Q)
+      table_name: U50205
+    - description: Table 5.2.6U. Real Gross and Net Domestic Investment by Major Type,
+        Chained Dollars (Q)
+      table_name: U50206
+    - description: Table 5.4.4U. Price Indexes for Private Fixed Investment in Structures
+        by Type (A) (Q)
+      table_name: U50404
+    - description: Table 5.4.5U. Private Fixed Investment in Structures by Type (A)
+        (Q)
+      table_name: U50405
+    - description: Table 5.4.6U. Private Fixed Investment in Structures by Type, Chained
+        dollars (A) (Q)
+      table_name: U50406
+    - description: Table 5.5.4U. Price Indexes for Private Fixed Investment in Equipment  by
+        Type (A) (Q)
+      table_name: U50504
+    - description: Table 5.5.5U. Private Fixed Investment in Equipment  by Type (A)
+        (Q)
+      table_name: U50505
+    - description: Table 5.5.6U. Private Fixed Investment in Equipment  by Type, Chained
+        dollars (A) (Q)
+      table_name: U50506
+    - description: Table 5.7.5AM1. Change in Private Inventories by Industry (M)
+      table_name: U50705AM1
+    - description: Table 5.7.5AM2. Change in Book Value by Industry (M)
+      table_name: U50705AM2
+    - description: Table 5.7.5AM3. Inventory Valuation Adjustment by Industry (M)
+      table_name: U50705AM3
+    - description: Table 5.7.5AU1. Change in Private Inventories by Industry (Q)
+      table_name: U50705AU1
+    - description: Table 5.7.5AU2. Change in Book Value by Industry (Q)
+      table_name: U50705AU2
+    - description: Table 5.7.5AU3. Inventory Valuation Adjustment by Industry (Q)
+      table_name: U50705AU3
+    - description: Table 5.7.5BM1. Change in Private Inventories by Industry (M)
+      table_name: U50705BM1
+    - description: Table 5.7.5BM2. Change in Book Value by Industry (M)
+      table_name: U50705BM2
+    - description: Table 5.7.5BM3. Inventory Valuation Adjustment by Industry (M)
+      table_name: U50705BM3
+    - description: Table 5.7.5BU1. Change in Private Inventories by Industry (A) (Q)
+      table_name: U50705BU1
+    - description: Table 5.7.5BU2. Change in Book Value by Industry (A) (Q)
+      table_name: U50705BU2
+    - description: Table 5.7.5BU3. Inventory Valuation Adjustment by Industry (A)
+        (Q)
+      table_name: U50705BU3
+    - description: Table 5.7.6AM. Change in Real Private Inventories by Industry (M)
+      table_name: U50706AM
+    - description: Table 5.7.6AU. Change in Real Private Inventories by Industry (Q)
+      table_name: U50706AU
+    - description: Table 5.7.6BM. Change in Real Private Inventories by Industry (M)
+      table_name: U50706BM
+    - description: Table 5.7.6BU. Change in Real Private Inventories by Industry (A)
+        (Q)
+      table_name: U50706BU
+    - description: Table 5.11U. Capital Transfers Paid and Received, by Sector and
+        by Type (Q)
+      table_name: U51100
+    - description: Table 7.2.4U. Price Indexes for Motor Vehicle Output (A) (Q)
+      table_name: U70204
+    - description: Table 7.2.5U. Motor Vehicle Output (A) (Q)
+      table_name: U70205
+    - description: Table 7.2.5S. Auto and Truck Unit Sales, Production, Inventories,
+        Expenditures, and Price (M)
+      table_name: U70205S
+    - description: Table 7.2.6U. Real Motor Vehicle Output, Chained Dollars (A) (Q)
+      table_name: U70206
+    - description: Table 9.1U. Reconciliation of Percent Change in the CPI with Percent
+        Change in the PCE Price Index (Q) (M)
+      table_name: U90100
+    - description: Table 9.2U. Final Sales of Domestic Computers (A) (Q)
+      table_name: U90200
+    - description: Table 9.3U. Gross Domestic Product and Final Sales of Software
+        (A)
+      table_name: U90300
+    - description: Table 9.4U. Software investment and prices (A)
+      table_name: U90400
+    - description: Table 9.5U. Contributions to Percent Change in Real Gross Domestic
+        Product From Final Sales of Computers, Software, and Communications Equipment
+        (A)
+      table_name: U90500
+    userid: BEA_KEY
+  description: Standard NI underlying detail tables
+  frequency: A
+  name: NIUnderlyingDetail
+- api:
+    datasetname: MNE
+    method: GETDATA
     parameters:
     - name: DirectionOfInvestment
       value: ''
@@ -862,247 +1144,361 @@ bea_datasets:
       value: Specify Value
     - name: ParentInvestment
       value: Specify Value
-    tables: []
-- name: FixedAssets
-  description: Standard Fixed Assets tables
-  frequency: A
-  api:
-    userid: BEA_KEY
-    method: GETDATA
-    datasetname: FixedAssets
     resultformat: JSON
+    tables: []
+    userid: BEA_KEY
+  description: Multinational Enterprises
+  frequency: A
+  name: MNE
+- api:
+    datasetname: FixedAssets
+    method: GETDATA
     parameters:
     - name: TableName
       value: ''
     - name: Year
       value: ''
-    tables:
-    - table_name: FAAt101
-      description: Table 1.1. Current-Cost Net Stock of Fixed Assets and Consumer Durable Goods (A)
-    - table_name: FAAt102
-      description: Table 1.2. Chain-Type Quantity Indexes for Net Stock of Fixed Assets and Consumer Durable Goods (A)
-    - table_name: FAAt103
-      description: Table 1.3. Current-Cost Depreciation of Fixed Assets and Consumer Durable Goods (A)
-    - table_name: FAAt104
-      description: Table 1.4. Chain-Type Quantity Indexes for Depreciation of Fixed Assets and Consumer Durable Goods (A)
-    - table_name: FAAt105
-      description: Table 1.5. Investment in Fixed Assets and Consumer Durable Goods (A)
-    - table_name: FAAt106
-      description: Table 1.6. Chain-Type Quantity Indexes for Investment in Fixed Assets and Consumer Durable Goods (A)
-    - table_name: FAAt107
-      description: Table 1.7. Current-Cost Other Changes in Volume of Assets for Fixed Assets and Consumer Durable Goods (A)
-    - table_name: FAAt108
-      description: Table 1.8. Historical-Cost Other Changes in Volume of Assets for Fixed Assets and Consumer Durable Goods (A)
-    - table_name: FAAt109
-      description: Table 1.9. Current-Cost Average Age at Yearend of Fixed Assets and Consumer Durable Goods (A)
-    - table_name: FAAt201
-      description: Table 2.1. Current-Cost Net Stock of Private Fixed Assets, Equipment, Structures, and Intellectual Property Products by Type (A)
-    - table_name: FAAt202
-      description: Table 2.2. Chain-Type Quantity Indexes for Net Stock of Private Fixed Assets, Equipment, Structures, and Intellectual Property Products by Type (A)
-    - table_name: FAAt203
-      description: Table 2.3. Historical-Cost Net Stock of Private Fixed Assets, Equipment, Structures, and Intellectual Property Products by Type (A)
-    - table_name: FAAt204
-      description: Table 2.4. Current-Cost Depreciation of Private Fixed Assets, Equipment, Structures, and Intellectual Property Products by Type (A)
-    - table_name: FAAt205
-      description: Table 2.5. Chain-Type Quantity Indexes for Depreciation of Private Fixed Assets, Equipment, Structures, and Intellectual Property Products by Type (A)
-    - table_name: FAAt206
-      description: Table 2.6. Historical-Cost Depreciation of Private Fixed Assets, Equipment, Structures, and Intellectual Property Products by Type (A)
-    - table_name: FAAt207
-      description: Table 2.7. Investment in Private Fixed Assets, Equipment, Structures, and Intellectual Property Products by Type (A)
-    - table_name: FAAt208
-      description: Table 2.8. Chain-Type Quantity indexes for Investment in Private Fixed Assets, Equipment, Structures, and Intellectual Property Products by Type (A)
-    - table_name: FAAt209
-      description: Table 2.9. Current-Cost Average Age at Yearend of Private Fixed Assets, Equipment, Structures, and Intellectual Property Products by Type (A)
-    - table_name: FAAt210
-      description: Table 2.10. Historical-Cost Average Age at Yearend of Private Fixed Assets,  Equipment, Structures, and Intellectual Property Products by Type (A)
-    - table_name: FAAt301E
-      description: Table 3.1E. Current-Cost Net Stock of Private Equipment by Industry (A)
-    - table_name: FAAt301ESI
-      description: Table 3.1ESI. Current-Cost Net Stock of Private Fixed Assets by Industry (A)
-    - table_name: FAAt301I
-      description: Table 3.1I. Current-Cost Net Stock of Intellectual Property Products by Industry (A)
-    - table_name: FAAt301S
-      description: Table 3.1S. Current-Cost net Stock of Private Structures by Industry (A)
-    - table_name: FAAt302E
-      description: Table 3.2E. Chain-Type Quantity Indexes for Net Stock of Private Equipment by Industry (A)
-    - table_name: FAAt302ESI
-      description: Table 3.2ESI. Chain-Type Quantity Indexes for Net Stock of Private Fixed Assets by Industry (A)
-    - table_name: FAAt302I
-      description: Table 3.2I. Chain-Type Quantity Indexes for Net Stock of Intellectual Property Products by Industry (A)
-    - table_name: FAAt302S
-      description: Table 3.2S. Chain-Type Quantity Indexes for Net Stock of Private Structures by Industry (A)
-    - table_name: FAAt303E
-      description: Table 3.3E. Historical-Cost Net Stock of Private Equipment by Industry (A)
-    - table_name: FAAt303ESI
-      description: Table 3.3ESI. Historical-Cost Net Stock of Private Fixed Assets by Industry (A)
-    - table_name: FAAt303I
-      description: Table 3.3I. Historical-Cost Net Stock of Private Intellectual Property Products by Industry (A)
-    - table_name: FAAt303S
-      description: Table 3.3S. Historical-Cost net Stock of Private Structures by Industry (A)
-    - table_name: FAAt304E
-      description: Table 3.4E. Current-Cost Depreciation of Private Equipment by Industry (A)
-    - table_name: FAAt304ESI
-      description: Table 3.4ESI. Current-Cost Depreciation of Private Fixed Assets by Industry (A)
-    - table_name: FAAt304I
-      description: Table 3.4I. Current-Cost Depreciation of Private Intellectual Property Products by Industry (A)
-    - table_name: FAAt304S
-      description: Table 3.4S. Current-Cost Depreciation of Private Structures by Industry (A)
-    - table_name: FAAt305E
-      description: Table 3.5E. Chain-Type Quantity Indexes for Depreciation of Private Equipment by Industry (A)
-    - table_name: FAAt305ESI
-      description: Table 3.5ESI. Chain-Type Quantity Indexes for Depreciation of Private Fixed Assets by Industry (A)
-    - table_name: FAAt305I
-      description: Table 3.5I. Chain-Type Quantity Indexes for Depreciation of Private Intellectual Property Products by Industry (A)
-    - table_name: FAAt305S
-      description: Table 3.5S. Chain-Type Quantity Indexes for Depreciation of Private Structures by Industry (A)
-    - table_name: FAAt306E
-      description: Table 3.6E. Historical-Cost Depreciation of Private Equipment by Industry (A)
-    - table_name: FAAt306ESI
-      description: Table 3.6ESI. Historical-Cost Depreciation of Private Fixed Assets by Industry (A)
-    - table_name: FAAt306I
-      description: Table 3.6I. Historical-Cost Depreciation of Private Intellectual Property Products by Industry (A)
-    - table_name: FAAt306S
-      description: Table 3.6S. Historical-Cost Depreciation of Private Structures by Industry (A)
-    - table_name: FAAt307E
-      description: Table 3.7E. Investment in Private Equipment by Industry (A)
-    - table_name: FAAt307ESI
-      description: Table 3.7ESI. Investment in Private Fixed Assets by Industry (A)
-    - table_name: FAAt307I
-      description: Table 3.7I. Investment in Private Intellectual Property Products by Industry (A)
-    - table_name: FAAt307S
-      description: Table 3.7S. Investment in Private Structures by Industry (A)
-    - table_name: FAAt308E
-      description: Table 3.8E. Chain-Type Quantity Indexes for Investment in Private Equipment by Industry (A)
-    - table_name: FAAt308ESI
-      description: Table 3.8ESI. Chain-Type Quantity Indexes for Investment in Private Fixed Assets by Industry (A)
-    - table_name: FAAt308I
-      description: Table 3.8I. Chain-Type Quantity Indexes for Investment in Private Intellectual Property Products by Industry (A)
-    - table_name: FAAt308S
-      description: Table 3.8S. Chain-Type Quantity Indexes for Investment in Private Structures by  Industry (A)
-    - table_name: FAAt309E
-      description: Table 3.9E. Current-Cost Average Age at Yearend of Private Equipment by Industry (A)
-    - table_name: FAAt309ESI
-      description: Table 3.9ESI. Current-Cost Average Age at Yearend of Private Fixed Assets by Industry (A)
-    - table_name: FAAt309I
-      description: Table 3.9I. Current-Cost Average Age at Yearend of Private Intellectual Property Products by Industry (A)
-    - table_name: FAAt309S
-      description: Table 3.9S. Current-Cost Average Age at Yearend of Private Structures by Industry (A)
-    - table_name: FAAt310E
-      description: Table 3.10E. Historical-Cost Average Age at Yearend of Private Equipment by Industry (A)
-    - table_name: FAAt310ESI
-      description: Table 3.10ESI. Historical-Cost Average Age at Yearend of Private Fixed Assets by Industry (A)
-    - table_name: FAAt310I
-      description: Table 3.10I. Historical-Cost Average Age at Yearend of Private Intellectual Property Products by Industry (A)
-    - table_name: FAAt310S
-      description: Table 3.10S. Historical-Cost Average Age at Yearend of Private Structures by Industry (A)
-    - table_name: FAAt401
-      description: Table 4.1. Current-Cost Net Stock of Private Nonresidential Fixed Assets by Industry Group and Legal Form of Organization (A)
-    - table_name: FAAt402
-      description: Table 4.2. Chain-Type Quantity Indexes for Net Stock of Private Nonresidential Fixed Assets by Industry Group and Legal Form of Organization (A)
-    - table_name: FAAt403
-      description: Table 4.3. Historical-Cost Net Stock of Private Nonresidential Fixed Assets by Industry Group and Legal Form of Organization (A)
-    - table_name: FAAt404
-      description: Table 4.4. Current-Cost Depreciation of Private Nonresidential Fixed Assets by Industry Group and Legal Form of Organization (A)
-    - table_name: FAAt405
-      description: Table 4.5. Chain-Type Quantity Indexes for Depreciation of Private Nonresidential Fixed Assets by Industry Group and Legal Form of Organization (A)
-    - table_name: FAAt406
-      description: Table 4.6. Historical-Cost Depreciation of Private Nonresidential Fixed Assets by Industry Group and Legal Form of Organization (A)
-    - table_name: FAAt407
-      description: Table 4.7. Investment in Private Nonresidential Fixed Assets by Industry Group and Legal Form of Organization (A)
-    - table_name: FAAt408
-      description: Table 4.8. Chain-Type Quantity Indexes for Investment in Private Nonresidential Fixed Assets by Industry Group and Legal Form of Organization (A)
-    - table_name: FAAt409
-      description: Table 4.9. Current-Cost Average Age at Yearend of Private Nonresidential Fixed Assets by Industry Group and Legal Form of Organization (A)
-    - table_name: FAAt410
-      description: Table 4.10. Historical-Cost Average Age at Yearend of Private Nonresidential Fixed Assets by Industry Group and Legal Form of Organization (A)
-    - table_name: FAAt501
-      description: Table 5.1. Current-Cost Net Stock of Residential Fixed Assets by Type of Owner, Legal Form of Organization, and Tenure Group (A)
-    - table_name: FAAt502
-      description: Table 5.2. Chain-Type Quantity Indexes for Net Stock of Residential Fixed Assets by Type of Owner, Legal Form of Organization, and Tenure Group (A)
-    - table_name: FAAt503
-      description: Table 5.3. Historical-Cost Net Stock of Residential Fixed Assets by Type of Owner, Legal Form of Organization, and Tenure Group (A)
-    - table_name: FAAt504
-      description: Table 5.4. Current-Cost Depreciation of Residential Fixed Assets by Type of Owner, Legal Form of Organization, and Tenure Group (A)
-    - table_name: FAAt505
-      description: Table 5.5. Chain-Type Quantity Indexes for Depreciation of Residential Fixed Assets by Type of Owner, Legal Form of Organization, and Tenure Group (A)
-    - table_name: FAAt506
-      description: Table 5.6. Historical-Cost Depreciation of Residential Fixed Assets by Type of Owner, Legal Form of Organization, and Tenure Group (A)
-    - table_name: FAAt507
-      description: Table 5.7. Investment in Residential Fixed Assets by Type of Owner, Legal Form of Organization, and Tenure Group (A)
-    - table_name: FAAt508
-      description: Table 5.8. Chain-Type Quantity Indexes for Investment in Residential Fixed Assets by Type of Owner, Legal Form of Organization, and Tenure Group (A)
-    - table_name: FAAt509
-      description: Table 5.9. Current-Cost Average Age at Yearend of Residential Fixed Assets by Type of Owner, Legal Form of Organization, and Tenure Group (A)
-    - table_name: FAAt510
-      description: Table 5.10. Historical-Cost Average Age at Yearend of Residential Fixed Assets by Type of Owner, Legal Form of Organization, and Tenure Group (A)
-    - table_name: FAAt601
-      description: Table 6.1. Current-Cost Net Stock of Private Fixed Assets by Industry Group and Legal Form of Organization (A)
-    - table_name: FAAt602
-      description: Table 6.2. Chain-type Quantity Indexes for Net Stock of Private Fixed Assets by Industry Group and Legal Form of Organization (A)
-    - table_name: FAAt603
-      description: Table 6.3. Historical-Cost Net Stock of Private Fixed Assets by Industry Group and Legal Form of Organization (A)
-    - table_name: FAAt604
-      description: Table 6.4. Current-Cost Depreciation of Private Fixed Assets by Industry Group and Legal Form of Organization (A)
-    - table_name: FAAt605
-      description: Table 6.5. Chain-Type Quantity Indexes for Depreciation of Private Fixed Assets by Industry Group and Legal Form of Organization (A)
-    - table_name: FAAt606
-      description: Table 6.6. Historical-Cost Depreciation of Private Fixed Assets by Industry Group and Legal Form of Organization (A)
-    - table_name: FAAt607
-      description: Table 6.7. Investment in Private Fixed Assets by Industry Group and Legal Form of Organization (A)
-    - table_name: FAAt608
-      description: Table 6.8. Chain-Type Quantity Indexes for Investment in Private Fixed Assets by Industry Group and Legal Form of Organization (A)
-    - table_name: FAAt609
-      description: Table 6.9. Current-Cost Average Age at Yearend of Private Fixed Assets by Industry Group and Legal Form of Organization (A)
-    - table_name: FAAt610
-      description: Table 6.10. Historical-Cost Average Age at Yearend of Private Fixed Assets by Industry Group and Legal Form of Organization (A)
-    - table_name: FAAt701
-      description: Table 7.1. Current-Cost Net Stock of Government Fixed Assets (A)
-    - table_name: FAAt702
-      description: Table 7.2. Chain-Type Quantity Indexes for Net Stock of Government Fixed Assets (A)
-    - table_name: FAAt703
-      description: Table 7.3. Current-Cost Depreciation of Government Fixed Assets (A)
-    - table_name: FAAt704
-      description: Table 7.4. Chain-Type Quantity Indexes for Depreciation of Government Fixed Assets (A)
-    - table_name: FAAt705
-      description: Table 7.5. Investment in Government Fixed Assets (A)
-    - table_name: FAAt706
-      description: Table 7.6. Chain-Type Quantity Indexes for Investment in Government Fixed Assets (A)
-    - table_name: FAAt707
-      description: Table 7.7. Current-Cost Average Age at Yearend of Government Fixed Assets (A)
-    - table_name: FAAt801
-      description: Table 8.1. Current-Cost Net Stock of Consumer Durable Goods (A)
-    - table_name: FAAt802
-      description: Table 8.2. Chain-Type Quantity Indexes for Net Stock of Consumer Durable Goods (A)
-    - table_name: FAAt803
-      description: Table 8.3. Historical-Cost Net Stock of Consumer Durable Goods (A)
-    - table_name: FAAt804
-      description: Table 8.4. Current-Cost Depreciation of Consumer Durable Goods (A)
-    - table_name: FAAt805
-      description: Table 8.5. Chain-Type Quantity Indexes for Depreciation of Consumer Durable Goods (A)
-    - table_name: FAAt806
-      description: Table 8.6. Historical-Cost Depreciation of Consumer Durable Goods (A)
-    - table_name: FAAt807
-      description: Table 8.7. Investment in Consumer Durable Goods (A)
-    - table_name: FAAt808
-      description: Table 8.8. Chain-Type Quantity Indexes for Investment in Consumer Durable Goods (A)
-    - table_name: FAAt809
-      description: Table 8.9. Current-Cost Average Age at Yearend of Consumer Durable Goods (A)
-    - table_name: FAAt810
-      description: Table 8.10. Historical-Cost Average Age at Yearend of Consumer Durable Goods (A)
-    - table_name: FAAt901
-      description: Table 9.1. Real Net Stock of Fixed Assets and Consumer Durable Goods (A)
-    - table_name: FAAt902
-      description: Table 9.2. Real Depreciation of Fixed Assets and Consumer Durable Goods (A)
-    - table_name: FAAt903
-      description: Table 9.3. Real Investment in Fixed Assets and Consumer Durable Goods (A)
-- name: ITA
-  description: International Transactions Accounts
-  frequency: A
-  api:
-    userid: BEA_KEY
-    method: GETDATA
-    datasetname: ITA
     resultformat: JSON
+    tables:
+    - description: Table 1.1. Current-Cost Net Stock of Fixed Assets and Consumer
+        Durable Goods (A)
+      table_name: FAAt101
+    - description: Table 1.2. Chain-Type Quantity Indexes for Net Stock of Fixed Assets
+        and Consumer Durable Goods (A)
+      table_name: FAAt102
+    - description: Table 1.3. Current-Cost Depreciation of Fixed Assets and Consumer
+        Durable Goods (A)
+      table_name: FAAt103
+    - description: Table 1.4. Chain-Type Quantity Indexes for Depreciation of Fixed
+        Assets and Consumer Durable Goods (A)
+      table_name: FAAt104
+    - description: Table 1.5. Investment in Fixed Assets and Consumer Durable Goods
+        (A)
+      table_name: FAAt105
+    - description: Table 1.6. Chain-Type Quantity Indexes for Investment in Fixed
+        Assets and Consumer Durable Goods (A)
+      table_name: FAAt106
+    - description: Table 1.7. Current-Cost Other Changes in Volume of Assets for Fixed
+        Assets and Consumer Durable Goods (A)
+      table_name: FAAt107
+    - description: Table 1.8. Historical-Cost Other Changes in Volume of Assets for
+        Fixed Assets and Consumer Durable Goods (A)
+      table_name: FAAt108
+    - description: Table 1.9. Current-Cost Average Age at Yearend of Fixed Assets
+        and Consumer Durable Goods (A)
+      table_name: FAAt109
+    - description: Table 2.1. Current-Cost Net Stock of Private Fixed Assets, Equipment,
+        Structures, and Intellectual Property Products by Type (A)
+      table_name: FAAt201
+    - description: Table 2.2. Chain-Type Quantity Indexes for Net Stock of Private
+        Fixed Assets, Equipment, Structures, and Intellectual Property Products by
+        Type (A)
+      table_name: FAAt202
+    - description: Table 2.3. Historical-Cost Net Stock of Private Fixed Assets, Equipment,
+        Structures, and Intellectual Property Products by Type (A)
+      table_name: FAAt203
+    - description: Table 2.4. Current-Cost Depreciation of Private Fixed Assets, Equipment,
+        Structures, and Intellectual Property Products by Type (A)
+      table_name: FAAt204
+    - description: Table 2.5. Chain-Type Quantity Indexes for Depreciation of Private
+        Fixed Assets, Equipment, Structures, and Intellectual Property Products by
+        Type (A)
+      table_name: FAAt205
+    - description: Table 2.6. Historical-Cost Depreciation of Private Fixed Assets,
+        Equipment, Structures, and Intellectual Property Products by Type (A)
+      table_name: FAAt206
+    - description: Table 2.7. Investment in Private Fixed Assets, Equipment, Structures,
+        and Intellectual Property Products by Type (A)
+      table_name: FAAt207
+    - description: Table 2.8. Chain-Type Quantity indexes for Investment in Private
+        Fixed Assets, Equipment, Structures, and Intellectual Property Products by
+        Type (A)
+      table_name: FAAt208
+    - description: Table 2.9. Current-Cost Average Age at Yearend of Private Fixed
+        Assets, Equipment, Structures, and Intellectual Property Products by Type
+        (A)
+      table_name: FAAt209
+    - description: Table 2.10. Historical-Cost Average Age at Yearend of Private Fixed
+        Assets,  Equipment, Structures, and Intellectual Property Products by Type
+        (A)
+      table_name: FAAt210
+    - description: Table 3.1E. Current-Cost Net Stock of Private Equipment by Industry
+        (A)
+      table_name: FAAt301E
+    - description: Table 3.1ESI. Current-Cost Net Stock of Private Fixed Assets by
+        Industry (A)
+      table_name: FAAt301ESI
+    - description: Table 3.1I. Current-Cost Net Stock of Intellectual Property Products
+        by Industry (A)
+      table_name: FAAt301I
+    - description: Table 3.1S. Current-Cost net Stock of Private Structures by Industry
+        (A)
+      table_name: FAAt301S
+    - description: Table 3.2E. Chain-Type Quantity Indexes for Net Stock of Private
+        Equipment by Industry (A)
+      table_name: FAAt302E
+    - description: Table 3.2ESI. Chain-Type Quantity Indexes for Net Stock of Private
+        Fixed Assets by Industry (A)
+      table_name: FAAt302ESI
+    - description: Table 3.2I. Chain-Type Quantity Indexes for Net Stock of Intellectual
+        Property Products by Industry (A)
+      table_name: FAAt302I
+    - description: Table 3.2S. Chain-Type Quantity Indexes for Net Stock of Private
+        Structures by Industry (A)
+      table_name: FAAt302S
+    - description: Table 3.3E. Historical-Cost Net Stock of Private Equipment by Industry
+        (A)
+      table_name: FAAt303E
+    - description: Table 3.3ESI. Historical-Cost Net Stock of Private Fixed Assets
+        by Industry (A)
+      table_name: FAAt303ESI
+    - description: Table 3.3I. Historical-Cost Net Stock of Private Intellectual Property
+        Products by Industry (A)
+      table_name: FAAt303I
+    - description: Table 3.3S. Historical-Cost net Stock of Private Structures by
+        Industry (A)
+      table_name: FAAt303S
+    - description: Table 3.4E. Current-Cost Depreciation of Private Equipment by Industry
+        (A)
+      table_name: FAAt304E
+    - description: Table 3.4ESI. Current-Cost Depreciation of Private Fixed Assets
+        by Industry (A)
+      table_name: FAAt304ESI
+    - description: Table 3.4I. Current-Cost Depreciation of Private Intellectual Property
+        Products by Industry (A)
+      table_name: FAAt304I
+    - description: Table 3.4S. Current-Cost Depreciation of Private Structures by
+        Industry (A)
+      table_name: FAAt304S
+    - description: Table 3.5E. Chain-Type Quantity Indexes for Depreciation of Private
+        Equipment by Industry (A)
+      table_name: FAAt305E
+    - description: Table 3.5ESI. Chain-Type Quantity Indexes for Depreciation of Private
+        Fixed Assets by Industry (A)
+      table_name: FAAt305ESI
+    - description: Table 3.5I. Chain-Type Quantity Indexes for Depreciation of Private
+        Intellectual Property Products by Industry (A)
+      table_name: FAAt305I
+    - description: Table 3.5S. Chain-Type Quantity Indexes for Depreciation of Private
+        Structures by Industry (A)
+      table_name: FAAt305S
+    - description: Table 3.6E. Historical-Cost Depreciation of Private Equipment by
+        Industry (A)
+      table_name: FAAt306E
+    - description: Table 3.6ESI. Historical-Cost Depreciation of Private Fixed Assets
+        by Industry (A)
+      table_name: FAAt306ESI
+    - description: Table 3.6I. Historical-Cost Depreciation of Private Intellectual
+        Property Products by Industry (A)
+      table_name: FAAt306I
+    - description: Table 3.6S. Historical-Cost Depreciation of Private Structures
+        by Industry (A)
+      table_name: FAAt306S
+    - description: Table 3.7E. Investment in Private Equipment by Industry (A)
+      table_name: FAAt307E
+    - description: Table 3.7ESI. Investment in Private Fixed Assets by Industry (A)
+      table_name: FAAt307ESI
+    - description: Table 3.7I. Investment in Private Intellectual Property Products
+        by Industry (A)
+      table_name: FAAt307I
+    - description: Table 3.7S. Investment in Private Structures by Industry (A)
+      table_name: FAAt307S
+    - description: Table 3.8E. Chain-Type Quantity Indexes for Investment in Private
+        Equipment by Industry (A)
+      table_name: FAAt308E
+    - description: Table 3.8ESI. Chain-Type Quantity Indexes for Investment in Private
+        Fixed Assets by Industry (A)
+      table_name: FAAt308ESI
+    - description: Table 3.8I. Chain-Type Quantity Indexes for Investment in Private
+        Intellectual Property Products by Industry (A)
+      table_name: FAAt308I
+    - description: Table 3.8S. Chain-Type Quantity Indexes for Investment in Private
+        Structures by  Industry (A)
+      table_name: FAAt308S
+    - description: Table 3.9E. Current-Cost Average Age at Yearend of Private Equipment
+        by Industry (A)
+      table_name: FAAt309E
+    - description: Table 3.9ESI. Current-Cost Average Age at Yearend of Private Fixed
+        Assets by Industry (A)
+      table_name: FAAt309ESI
+    - description: Table 3.9I. Current-Cost Average Age at Yearend of Private Intellectual
+        Property Products by Industry (A)
+      table_name: FAAt309I
+    - description: Table 3.9S. Current-Cost Average Age at Yearend of Private Structures
+        by Industry (A)
+      table_name: FAAt309S
+    - description: Table 3.10E. Historical-Cost Average Age at Yearend of Private
+        Equipment by Industry (A)
+      table_name: FAAt310E
+    - description: Table 3.10ESI. Historical-Cost Average Age at Yearend of Private
+        Fixed Assets by Industry (A)
+      table_name: FAAt310ESI
+    - description: Table 3.10I. Historical-Cost Average Age at Yearend of Private
+        Intellectual Property Products by Industry (A)
+      table_name: FAAt310I
+    - description: Table 3.10S. Historical-Cost Average Age at Yearend of Private
+        Structures by Industry (A)
+      table_name: FAAt310S
+    - description: Table 4.1. Current-Cost Net Stock of Private Nonresidential Fixed
+        Assets by Industry Group and Legal Form of Organization (A)
+      table_name: FAAt401
+    - description: Table 4.2. Chain-Type Quantity Indexes for Net Stock of Private
+        Nonresidential Fixed Assets by Industry Group and Legal Form of Organization
+        (A)
+      table_name: FAAt402
+    - description: Table 4.3. Historical-Cost Net Stock of Private Nonresidential
+        Fixed Assets by Industry Group and Legal Form of Organization (A)
+      table_name: FAAt403
+    - description: Table 4.4. Current-Cost Depreciation of Private Nonresidential
+        Fixed Assets by Industry Group and Legal Form of Organization (A)
+      table_name: FAAt404
+    - description: Table 4.5. Chain-Type Quantity Indexes for Depreciation of Private
+        Nonresidential Fixed Assets by Industry Group and Legal Form of Organization
+        (A)
+      table_name: FAAt405
+    - description: Table 4.6. Historical-Cost Depreciation of Private Nonresidential
+        Fixed Assets by Industry Group and Legal Form of Organization (A)
+      table_name: FAAt406
+    - description: Table 4.7. Investment in Private Nonresidential Fixed Assets by
+        Industry Group and Legal Form of Organization (A)
+      table_name: FAAt407
+    - description: Table 4.8. Chain-Type Quantity Indexes for Investment in Private
+        Nonresidential Fixed Assets by Industry Group and Legal Form of Organization
+        (A)
+      table_name: FAAt408
+    - description: Table 4.9. Current-Cost Average Age at Yearend of Private Nonresidential
+        Fixed Assets by Industry Group and Legal Form of Organization (A)
+      table_name: FAAt409
+    - description: Table 4.10. Historical-Cost Average Age at Yearend of Private Nonresidential
+        Fixed Assets by Industry Group and Legal Form of Organization (A)
+      table_name: FAAt410
+    - description: Table 5.1. Current-Cost Net Stock of Residential Fixed Assets by
+        Type of Owner, Legal Form of Organization, and Tenure Group (A)
+      table_name: FAAt501
+    - description: Table 5.2. Chain-Type Quantity Indexes for Net Stock of Residential
+        Fixed Assets by Type of Owner, Legal Form of Organization, and Tenure Group
+        (A)
+      table_name: FAAt502
+    - description: Table 5.3. Historical-Cost Net Stock of Residential Fixed Assets
+        by Type of Owner, Legal Form of Organization, and Tenure Group (A)
+      table_name: FAAt503
+    - description: Table 5.4. Current-Cost Depreciation of Residential Fixed Assets
+        by Type of Owner, Legal Form of Organization, and Tenure Group (A)
+      table_name: FAAt504
+    - description: Table 5.5. Chain-Type Quantity Indexes for Depreciation of Residential
+        Fixed Assets by Type of Owner, Legal Form of Organization, and Tenure Group
+        (A)
+      table_name: FAAt505
+    - description: Table 5.6. Historical-Cost Depreciation of Residential Fixed Assets
+        by Type of Owner, Legal Form of Organization, and Tenure Group (A)
+      table_name: FAAt506
+    - description: Table 5.7. Investment in Residential Fixed Assets by Type of Owner,
+        Legal Form of Organization, and Tenure Group (A)
+      table_name: FAAt507
+    - description: Table 5.8. Chain-Type Quantity Indexes for Investment in Residential
+        Fixed Assets by Type of Owner, Legal Form of Organization, and Tenure Group
+        (A)
+      table_name: FAAt508
+    - description: Table 5.9. Current-Cost Average Age at Yearend of Residential Fixed
+        Assets by Type of Owner, Legal Form of Organization, and Tenure Group (A)
+      table_name: FAAt509
+    - description: Table 5.10. Historical-Cost Average Age at Yearend of Residential
+        Fixed Assets by Type of Owner, Legal Form of Organization, and Tenure Group
+        (A)
+      table_name: FAAt510
+    - description: Table 6.1. Current-Cost Net Stock of Private Fixed Assets by Industry
+        Group and Legal Form of Organization (A)
+      table_name: FAAt601
+    - description: Table 6.2. Chain-type Quantity Indexes for Net Stock of Private
+        Fixed Assets by Industry Group and Legal Form of Organization (A)
+      table_name: FAAt602
+    - description: Table 6.3. Historical-Cost Net Stock of Private Fixed Assets by
+        Industry Group and Legal Form of Organization (A)
+      table_name: FAAt603
+    - description: Table 6.4. Current-Cost Depreciation of Private Fixed Assets by
+        Industry Group and Legal Form of Organization (A)
+      table_name: FAAt604
+    - description: Table 6.5. Chain-Type Quantity Indexes for Depreciation of Private
+        Fixed Assets by Industry Group and Legal Form of Organization (A)
+      table_name: FAAt605
+    - description: Table 6.6. Historical-Cost Depreciation of Private Fixed Assets
+        by Industry Group and Legal Form of Organization (A)
+      table_name: FAAt606
+    - description: Table 6.7. Investment in Private Fixed Assets by Industry Group
+        and Legal Form of Organization (A)
+      table_name: FAAt607
+    - description: Table 6.8. Chain-Type Quantity Indexes for Investment in Private
+        Fixed Assets by Industry Group and Legal Form of Organization (A)
+      table_name: FAAt608
+    - description: Table 6.9. Current-Cost Average Age at Yearend of Private Fixed
+        Assets by Industry Group and Legal Form of Organization (A)
+      table_name: FAAt609
+    - description: Table 6.10. Historical-Cost Average Age at Yearend of Private Fixed
+        Assets by Industry Group and Legal Form of Organization (A)
+      table_name: FAAt610
+    - description: Table 7.1. Current-Cost Net Stock of Government Fixed Assets (A)
+      table_name: FAAt701
+    - description: Table 7.2. Chain-Type Quantity Indexes for Net Stock of Government
+        Fixed Assets (A)
+      table_name: FAAt702
+    - description: Table 7.3. Current-Cost Depreciation of Government Fixed Assets
+        (A)
+      table_name: FAAt703
+    - description: Table 7.4. Chain-Type Quantity Indexes for Depreciation of Government
+        Fixed Assets (A)
+      table_name: FAAt704
+    - description: Table 7.5. Investment in Government Fixed Assets (A)
+      table_name: FAAt705
+    - description: Table 7.6. Chain-Type Quantity Indexes for Investment in Government
+        Fixed Assets (A)
+      table_name: FAAt706
+    - description: Table 7.7. Current-Cost Average Age at Yearend of Government Fixed
+        Assets (A)
+      table_name: FAAt707
+    - description: Table 8.1. Current-Cost Net Stock of Consumer Durable Goods (A)
+      table_name: FAAt801
+    - description: Table 8.2. Chain-Type Quantity Indexes for Net Stock of Consumer
+        Durable Goods (A)
+      table_name: FAAt802
+    - description: Table 8.3. Historical-Cost Net Stock of Consumer Durable Goods
+        (A)
+      table_name: FAAt803
+    - description: Table 8.4. Current-Cost Depreciation of Consumer Durable Goods
+        (A)
+      table_name: FAAt804
+    - description: Table 8.5. Chain-Type Quantity Indexes for Depreciation of Consumer
+        Durable Goods (A)
+      table_name: FAAt805
+    - description: Table 8.6. Historical-Cost Depreciation of Consumer Durable Goods
+        (A)
+      table_name: FAAt806
+    - description: Table 8.7. Investment in Consumer Durable Goods (A)
+      table_name: FAAt807
+    - description: Table 8.8. Chain-Type Quantity Indexes for Investment in Consumer
+        Durable Goods (A)
+      table_name: FAAt808
+    - description: Table 8.9. Current-Cost Average Age at Yearend of Consumer Durable
+        Goods (A)
+      table_name: FAAt809
+    - description: Table 8.10. Historical-Cost Average Age at Yearend of Consumer
+        Durable Goods (A)
+      table_name: FAAt810
+    - description: Table 9.1. Real Net Stock of Fixed Assets and Consumer Durable
+        Goods (A)
+      table_name: FAAt901
+    - description: Table 9.2. Real Depreciation of Fixed Assets and Consumer Durable
+        Goods (A)
+      table_name: FAAt902
+    - description: Table 9.3. Real Investment in Fixed Assets and Consumer Durable
+        Goods (A)
+      table_name: FAAt903
+    userid: BEA_KEY
+  description: Standard Fixed Assets tables
+  frequency: A
+  name: FixedAssets
+- api:
+    datasetname: ITA
+    method: GETDATA
     parameters:
     - name: Indicator
       value: ALL
@@ -1112,15 +1508,15 @@ bea_datasets:
       value: ALL
     - name: Year
       value: ALL
-    tables: []
-- name: IIP
-  description: International Investment Position
-  frequency: A
-  api:
-    userid: BEA_KEY
-    method: GETDATA
-    datasetname: IIP
     resultformat: JSON
+    tables: []
+    userid: BEA_KEY
+  description: International Transactions Accounts
+  frequency: A
+  name: ITA
+- api:
+    datasetname: IIP
+    method: GETDATA
     parameters:
     - name: TypeOfInvestment
       value: ALL
@@ -1130,29 +1526,29 @@ bea_datasets:
       value: ALL
     - name: Year
       value: ALL
-    tables: []
-- name: InputOutput
-  description: Input-Output Data
-  frequency: A
-  api:
-    userid: BEA_KEY
-    method: GETDATA
-    datasetname: InputOutput
     resultformat: JSON
+    tables: []
+    userid: BEA_KEY
+  description: International Investment Position
+  frequency: A
+  name: IIP
+- api:
+    datasetname: InputOutput
+    method: GETDATA
     parameters:
     - name: TableID
       value: ' '
     - name: Year
       value: ''
-    tables: []
-- name: IntlServTrade
-  description: International Services Trade
-  frequency: A
-  api:
-    userid: BEA_KEY
-    method: GETDATA
-    datasetname: IntlServTrade
     resultformat: JSON
+    tables: []
+    userid: BEA_KEY
+  description: Input-Output Data
+  frequency: A
+  name: InputOutput
+- api:
+    datasetname: IntlServTrade
+    method: GETDATA
     parameters:
     - name: TypeOfService
       value: ALL
@@ -1164,15 +1560,15 @@ bea_datasets:
       value: AllCountries
     - name: Year
       value: ALL
-    tables: []
-- name: IntlServSTA
-  description: International Services Supplied Through Affiliates
-  frequency: A
-  api:
-    userid: BEA_KEY
-    method: GETDATA
-    datasetname: IntlServSTA
     resultformat: JSON
+    tables: []
+    userid: BEA_KEY
+  description: International Services Trade
+  frequency: A
+  name: IntlServTrade
+- api:
+    datasetname: IntlServSTA
+    method: GETDATA
     parameters:
     - name: Channel
       value: ALL
@@ -1184,15 +1580,33 @@ bea_datasets:
       value: AllCountries
     - name: Year
       value: ALL
+    resultformat: JSON
     tables: []
-- name: GDPbyIndustry
+    userid: BEA_KEY
+  description: International Services Supplied Through Affiliates
+  frequency: A
+  name: IntlServSTA
+- api:
+    datasetname: GDPbyIndustry
+    method: GETDATA
+    parameters:
+    - name: Frequency
+      value: ''
+    - name: Industry
+      value: ''
+    - name: TableID
+      value: ''
+    - name: Year
+      value: ''
+    resultformat: JSON
+    tables: []
+    userid: BEA_KEY
   description: GDP by Industry
   frequency: A
-  api:
-    userid: BEA_KEY
+  name: GDPbyIndustry
+- api:
+    datasetname: UnderlyingGDPbyIndustry
     method: GETDATA
-    datasetname: GDPbyIndustry
-    resultformat: JSON
     parameters:
     - name: Frequency
       value: ''
@@ -1202,32 +1616,19 @@ bea_datasets:
       value: ''
     - name: Year
       value: ''
+    resultformat: JSON
     tables: []
-- name: UnderlyingGDPbyIndustry
+    userid: BEA_KEY
   description: Underlying GDP by Industry
   frequency: A
-  api:
-    userid: BEA_KEY
+  name: UnderlyingGDPbyIndustry
+- api:
+    datasetname: APIDatasetMetaData
     method: GETDATA
-    datasetname: UnderlyingGDPbyIndustry
+    parameters: []
     resultformat: JSON
-    parameters:
-    - name: Frequency
-      value: ''
-    - name: Industry
-      value: ''
-    - name: TableID
-      value: ''
-    - name: Year
-      value: ''
     tables: []
-- name: APIDatasetMetaData
+    userid: BEA_KEY
   description: Metadata about other API datasets
   frequency: A
-  api:
-    userid: BEA_KEY
-    method: GETDATA
-    datasetname: APIDatasetMetaData
-    resultformat: JSON
-    parameters: []
-    tables: []
+  name: APIDatasetMetaData

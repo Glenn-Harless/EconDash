@@ -4,7 +4,7 @@
     select table_name
     from information_schema.tables
     where table_schema = 'bea'
-    and table_name like 'FixedAssets_%'
+    and table_name like 'fixedassets_%'
 {% endset %}
 
 {% set tables = run_query(tables_query) %}
@@ -23,16 +23,16 @@
     {% for table_name in tables_list %}
         select
           '{{ table_name }}' as table_name,
-          "TableName",
-          "SeriesCode",
-          "LineNumber",
-          "LineDescription",
-          "TimePeriod",
-          "METRIC_NAME",
-          "CL_UNIT",
-          "UNIT_MULT",
-          "DataValue",
-          "NoteRef"
+          tablename,
+            seriescode,
+            linenumber,
+            linedescription,
+            timeperiod,
+            metric_name,
+            cl_unit,
+            unit_mult,
+            datavalue,
+            noteref
         from {{ source('bea', table_name) }}
 
         {% if not loop.last %}

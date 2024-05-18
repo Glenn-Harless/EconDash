@@ -19,12 +19,12 @@ with DAG(
 
     dbt_run = BashOperator(
         task_id='dbt_run',
-        bash_command='cd /opt/dbt && dbt run'
+        bash_command='/home/airflow/.local/bin/dbt run --project-dir /opt/dbt/econdash --profiles-dir /opt/dbt'
     )
 
     dbt_test = BashOperator(
         task_id='dbt_test',
-        bash_command='cd /opt/dbt && dbt test'
+        bash_command='/home/airflow/.local/bin/dbt test --project-dir /opt/dbt/econdash --profiles-dir /opt/dbt'
     )
 
     dbt_run >> dbt_test

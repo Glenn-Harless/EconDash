@@ -2,7 +2,7 @@ econdash:
   outputs:
     dev:
       dbname: airflow
-      host: localhost
+      host: postgres #localhost for dev
       pass: airflow
       port: 5432
       schema: econdash
