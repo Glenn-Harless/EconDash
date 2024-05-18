@@ -87,6 +87,8 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
     - ${AIRFLOW_PROJ_DIR:-.}/packages:/opt/airflow/packages  # Adding for Dag Package Access
     - ${AIRFLOW_PROJ_DIR:-.}/stream_configs:/opt/airflow/stream_configs  # Ensure this line is present
+    - ./dbt:/opt/dbt
+
 
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:

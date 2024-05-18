@@ -1604,222 +1604,6 @@ bea_datasets:
     - name: Year
       value: ''
     tables: []
-- name: Regional
-  description: Regional data sets
-  frequency: A
-  api:
-    userid: BEA_KEY
-    method: GETDATA
-    datasetname: Regional
-    resultformat: JSON
-    parameters:
-    - name: GeoFips
-      value: Specify Value
-    - name: LineCode
-      value: Specify Value
-    - name: TableName
-      value: ''
-    - name: Year
-      value: LAST5
-    tables:
-    - table_name: CAEMP25N
-      description: Total full-time and part-time employment by NAICS industry
-    - table_name: CAEMP25S
-      description: Total full-time and part-time employment by SIC industry
-    - table_name: CAGDP1
-      description: County and MSA gross domestic product (GDP) summary
-    - table_name: CAGDP11
-      description: Contributions to percent change in real GDP
-    - table_name: CAGDP2
-      description: Gross domestic product (GDP) by county and metropolitan area
-    - table_name: CAGDP8
-      description: Chain-type quantity indexes for real GDP by county and metropolitan
-        area (2017=100.0)
-    - table_name: CAGDP9
-      description: Real GDP by county and metropolitan area
-    - table_name: CAINC1
-      description: 'County and MSA personal income summary: personal income, population,
-        per capita personal income'
-    - table_name: CAINC30
-      description: Economic profile
-    - table_name: CAINC35
-      description: Personal current transfer receipts
-    - table_name: CAINC4
-      description: Personal income and employment by major component
-    - table_name: CAINC45
-      description: Farm income and expenses
-    - table_name: CAINC5N
-      description: Personal income by major component and earnings by NAICS industry
-    - table_name: CAINC5S
-      description: Personal income by major component and earnings by SIC industry
-    - table_name: CAINC6N
-      description: Compensation of employees by NAICS industry
-    - table_name: CAINC6S
-      description: Compensation of employees by SIC industry
-    - table_name: CAINC91
-      description: Gross flow of earnings
-    - table_name: MAIRPD
-      description: Implicit regional price deflators by MSA
-    - table_name: MARPI
-      description: Real personal income by MSA
-    - table_name: MARPP
-      description: Regional price parities by MSA
-    - table_name: PAIRPD
-      description: Implicit regional price deflators by portion
-    - table_name: PARPI
-      description: Real personal income by portion
-    - table_name: PARPP
-      description: Regional price parities by portion
-    - table_name: SAACArtsComp
-      description: ACPSA compensation by ACPSA industry
-    - table_name: SAACArtsEmp
-      description: ACPSA full-time and part-time employment by ACPSA industry
-    - table_name: SAACArtsVA
-      description: ACPSA value added by ACPSA industry
-    - table_name: SAACCompLQ
-      description: Arts compensation location quotient
-    - table_name: SAACCompRatio
-      description: Arts compensation ratio
-    - table_name: SAACEmpLQ
-      description: Arts employment location quotient
-    - table_name: SAACEmpRatio
-      description: Arts employment ratio
-    - table_name: SAACVALQ
-      description: Arts value added location quotient
-    - table_name: SAACVARatio
-      description: Arts value added ratio
-    - table_name: SAEMP25N
-      description: Total full-time and part-time employment by NAICS industry
-    - table_name: SAEMP25S
-      description: Total full-time and part-time employment by SIC industry
-    - table_name: SAEMP27N
-      description: Full-time and part-time wage and salary employment by NAICS industry
-    - table_name: SAEMP27S
-      description: Full-time and part-time wage and salary employment by SIC industry
-    - table_name: SAGDP1
-      description: State annual gross domestic product (GDP) summary
-    - table_name: SAGDP11N
-      description: Contributions to percent change in real GDP
-    - table_name: SAGDP2N
-      description: Gross domestic product (GDP) by state
-    - table_name: SAGDP3N
-      description: Taxes on production and imports less subsidies
-    - table_name: SAGDP4N
-      description: Compensation of employees
-    - table_name: SAGDP5N
-      description: Subsidies
-    - table_name: SAGDP6N
-      description: Taxes on production and imports
-    - table_name: SAGDP7N
-      description: Gross operating surplus
-    - table_name: SAGDP8N
-      description: Chain-type quantity indexes for real GDP by state (2017=100.0)
-    - table_name: SAGDP9N
-      description: Real GDP by state
-    - table_name: SAINC1
-      description: 'State annual personal income summary: personal income, population,
-        per capita personal income'
-    - table_name: SAINC30
-      description: Economic profile
-    - table_name: SAINC35
-      description: Personal current transfer receipts
-    - table_name: SAINC4
-      description: Personal income and employment by major component
-    - table_name: SAINC40
-      description: Property income
-    - table_name: SAINC45
-      description: Farm income and expenses
-    - table_name: SAINC50
-      description: Personal current taxes
-    - table_name: SAINC51
-      description: 'State annual disposable personal income summary: disposable personal
-        income, population, and per capita disposable personal income'
-    - table_name: SAINC5H
-      description: Personal income by major component and earnings by industry (historical)
-    - table_name: SAINC5N
-      description: Personal income by major component and earnings by NAICS industry
-    - table_name: SAINC5S
-      description: Personal income by major component and earnings by SIC industry
-    - table_name: SAINC6N
-      description: Compensation of employees by NAICS industry
-    - table_name: SAINC6S
-      description: Compensation of employees by SIC industry
-    - table_name: SAINC70
-      description: Transactions of state and local government defined benefit pension
-        plans
-    - table_name: SAINC7H
-      description: Wages and salaries by industry (historical)
-    - table_name: SAINC7N
-      description: Wages and salaries by NAICS industry
-    - table_name: SAINC7S
-      description: Wages and salaries by SIC industry
-    - table_name: SAINC91
-      description: Gross flow of earnings
-    - table_name: SAIRPD
-      description: Implicit regional price deflators by state
-    - table_name: SAOACTVA
-      description: Outdoor recreation satellite account activities - value added
-    - table_name: SAOCOMP
-      description: Outdoor recreation satellite account compensation
-    - table_name: SAOEMP
-      description: Outdoor recreation satellite account employment
-    - table_name: SAOVA
-      description: Outdoor recreation satellite account value added
-    - table_name: SAPCE1
-      description: Personal consumption expenditures (PCE) by major type of product
-    - table_name: SAPCE2
-      description: Per capita personal consumption expenditures (PCE) by major type
-        of product
-    - table_name: SAPCE3
-      description: Personal consumption expenditures (PCE) by state by type of product
-    - table_name: SAPCE4
-      description: Personal consumption expenditures (PCE) by state by function
-    - table_name: SARPI
-      description: Real personal income and real personal Consumption Expenditures
-        (PCE) by state
-    - table_name: SARPP
-      description: Regional price parities by state
-    - table_name: SASUMMARY
-      description: 'State annual summary statistics: personal income, GDP, consumer
-        spending, price indexes, and employment'
-    - table_name: SQGDP1
-      description: State quarterly gross domestic product (GDP) summary
-    - table_name: SQGDP11
-      description: Contributions to percent change in real GDP
-    - table_name: SQGDP2
-      description: Gross domestic product (GDP) by state
-    - table_name: SQGDP8
-      description: Chain-type quantity indexes for real GDP by state (2017=100.0)
-    - table_name: SQGDP9
-      description: Real GDP by state
-    - table_name: SQINC1
-      description: 'State quarterly personal income summary: personal income, population,
-        per capita personal income'
-    - table_name: SQINC35
-      description: Personal current transfer receipts
-    - table_name: SQINC4
-      description: Personal income by major component
-    - table_name: SQINC5H
-      description: Personal income by major component and earnings by industry (historical)
-    - table_name: SQINC5N
-      description: Personal income by major component and earnings by NAICS industry
-    - table_name: SQINC5S
-      description: Personal income by major component and earnings by SIC industry
-    - table_name: SQINC6N
-      description: Compensation of employees by NAICS industry
-    - table_name: SQINC6S
-      description: Compensation of employees by SIC industry
-    - table_name: SQINC7H
-      description: Wages and salaries by industry (historical)
-    - table_name: SQINC7N
-      description: Wages and salaries by NAICS industry
-    - table_name: SQINC7S
-      description: Wages and salaries by SIC industry
-    - table_name: TASUMMARY1
-      description: Summary of GDP and components for U.S. territories, current dollars
-    - table_name: TASUMMARY2
-      description: Summary of real GDP and components for U.S. territories, chained
-        dollars
 - name: UnderlyingGDPbyIndustry
   description: Underlying GDP by Industry
   frequency: A
@@ -1848,3 +1632,220 @@ bea_datasets:
     resultformat: JSON
     parameters: []
     tables: []
+
+# # - name: Regional
+#   description: Regional data sets
+#   frequency: A
+#   api:
+#     userid: BEA_KEY
+#     method: GETDATA
+#     datasetname: Regional
+#     resultformat: JSON
+#     parameters:
+#     - name: GeoFips
+#       value: Specify Value
+#     - name: LineCode
+#       value: Specify Value
+#     - name: TableName
+#       value: ''
+#     - name: Year
+#       value: LAST5
+#     tables:
+#     - table_name: CAEMP25N
+#       description: Total full-time and part-time employment by NAICS industry
+#     - table_name: CAEMP25S
+#       description: Total full-time and part-time employment by SIC industry
+#     - table_name: CAGDP1
+#       description: County and MSA gross domestic product (GDP) summary
+#     - table_name: CAGDP11
+#       description: Contributions to percent change in real GDP
+#     - table_name: CAGDP2
+#       description: Gross domestic product (GDP) by county and metropolitan area
+#     - table_name: CAGDP8
+#       description: Chain-type quantity indexes for real GDP by county and metropolitan
+#         area (2017=100.0)
+#     - table_name: CAGDP9
+#       description: Real GDP by county and metropolitan area
+#     - table_name: CAINC1
+#       description: 'County and MSA personal income summary: personal income, population,
+#         per capita personal income'
+#     - table_name: CAINC30
+#       description: Economic profile
+#     - table_name: CAINC35
+#       description: Personal current transfer receipts
+#     - table_name: CAINC4
+#       description: Personal income and employment by major component
+#     - table_name: CAINC45
+#       description: Farm income and expenses
+#     - table_name: CAINC5N
+#       description: Personal income by major component and earnings by NAICS industry
+#     - table_name: CAINC5S
+#       description: Personal income by major component and earnings by SIC industry
+#     - table_name: CAINC6N
+#       description: Compensation of employees by NAICS industry
+#     - table_name: CAINC6S
+#       description: Compensation of employees by SIC industry
+#     - table_name: CAINC91
+#       description: Gross flow of earnings
+#     - table_name: MAIRPD
+#       description: Implicit regional price deflators by MSA
+#     - table_name: MARPI
+#       description: Real personal income by MSA
+#     - table_name: MARPP
+#       description: Regional price parities by MSA
+#     - table_name: PAIRPD
+#       description: Implicit regional price deflators by portion
+#     - table_name: PARPI
+#       description: Real personal income by portion
+#     - table_name: PARPP
+#       description: Regional price parities by portion
+#     - table_name: SAACArtsComp
+#       description: ACPSA compensation by ACPSA industry
+#     - table_name: SAACArtsEmp
+#       description: ACPSA full-time and part-time employment by ACPSA industry
+#     - table_name: SAACArtsVA
+#       description: ACPSA value added by ACPSA industry
+#     - table_name: SAACCompLQ
+#       description: Arts compensation location quotient
+#     - table_name: SAACCompRatio
+#       description: Arts compensation ratio
+#     - table_name: SAACEmpLQ
+#       description: Arts employment location quotient
+#     - table_name: SAACEmpRatio
+#       description: Arts employment ratio
+#     - table_name: SAACVALQ
+#       description: Arts value added location quotient
+#     - table_name: SAACVARatio
+#       description: Arts value added ratio
+#     - table_name: SAEMP25N
+#       description: Total full-time and part-time employment by NAICS industry
+#     - table_name: SAEMP25S
+#       description: Total full-time and part-time employment by SIC industry
+#     - table_name: SAEMP27N
+#       description: Full-time and part-time wage and salary employment by NAICS industry
+#     - table_name: SAEMP27S
+#       description: Full-time and part-time wage and salary employment by SIC industry
+#     - table_name: SAGDP1
+#       description: State annual gross domestic product (GDP) summary
+#     - table_name: SAGDP11N
+#       description: Contributions to percent change in real GDP
+#     - table_name: SAGDP2N
+#       description: Gross domestic product (GDP) by state
+#     - table_name: SAGDP3N
+#       description: Taxes on production and imports less subsidies
+#     - table_name: SAGDP4N
+#       description: Compensation of employees
+#     - table_name: SAGDP5N
+#       description: Subsidies
+#     - table_name: SAGDP6N
+#       description: Taxes on production and imports
+#     - table_name: SAGDP7N
+#       description: Gross operating surplus
+#     - table_name: SAGDP8N
+#       description: Chain-type quantity indexes for real GDP by state (2017=100.0)
+#     - table_name: SAGDP9N
+#       description: Real GDP by state
+#     - table_name: SAINC1
+#       description: 'State annual personal income summary: personal income, population,
+#         per capita personal income'
+#     - table_name: SAINC30
+#       description: Economic profile
+#     - table_name: SAINC35
+#       description: Personal current transfer receipts
+#     - table_name: SAINC4
+#       description: Personal income and employment by major component
+#     - table_name: SAINC40
+#       description: Property income
+#     - table_name: SAINC45
+#       description: Farm income and expenses
+#     - table_name: SAINC50
+#       description: Personal current taxes
+#     - table_name: SAINC51
+#       description: 'State annual disposable personal income summary: disposable personal
+#         income, population, and per capita disposable personal income'
+#     - table_name: SAINC5H
+#       description: Personal income by major component and earnings by industry (historical)
+#     - table_name: SAINC5N
+#       description: Personal income by major component and earnings by NAICS industry
+#     - table_name: SAINC5S
+#       description: Personal income by major component and earnings by SIC industry
+#     - table_name: SAINC6N
+#       description: Compensation of employees by NAICS industry
+#     - table_name: SAINC6S
+#       description: Compensation of employees by SIC industry
+#     - table_name: SAINC70
+#       description: Transactions of state and local government defined benefit pension
+#         plans
+#     - table_name: SAINC7H
+#       description: Wages and salaries by industry (historical)
+#     - table_name: SAINC7N
+#       description: Wages and salaries by NAICS industry
+#     - table_name: SAINC7S
+#       description: Wages and salaries by SIC industry
+#     - table_name: SAINC91
+#       description: Gross flow of earnings
+#     - table_name: SAIRPD
+#       description: Implicit regional price deflators by state
+#     - table_name: SAOACTVA
+#       description: Outdoor recreation satellite account activities - value added
+#     - table_name: SAOCOMP
+#       description: Outdoor recreation satellite account compensation
+#     - table_name: SAOEMP
+#       description: Outdoor recreation satellite account employment
+#     - table_name: SAOVA
+#       description: Outdoor recreation satellite account value added
+#     - table_name: SAPCE1
+#       description: Personal consumption expenditures (PCE) by major type of product
+#     - table_name: SAPCE2
+#       description: Per capita personal consumption expenditures (PCE) by major type
+#         of product
+#     - table_name: SAPCE3
+#       description: Personal consumption expenditures (PCE) by state by type of product
+#     - table_name: SAPCE4
+#       description: Personal consumption expenditures (PCE) by state by function
+#     - table_name: SARPI
+#       description: Real personal income and real personal Consumption Expenditures
+#         (PCE) by state
+#     - table_name: SARPP
+#       description: Regional price parities by state
+#     - table_name: SASUMMARY
+#       description: 'State annual summary statistics: personal income, GDP, consumer
+#         spending, price indexes, and employment'
+#     - table_name: SQGDP1
+#       description: State quarterly gross domestic product (GDP) summary
+#     - table_name: SQGDP11
+#       description: Contributions to percent change in real GDP
+#     - table_name: SQGDP2
+#       description: Gross domestic product (GDP) by state
+#     - table_name: SQGDP8
+#       description: Chain-type quantity indexes for real GDP by state (2017=100.0)
+#     - table_name: SQGDP9
+#       description: Real GDP by state
+#     - table_name: SQINC1
+#       description: 'State quarterly personal income summary: personal income, population,
+#         per capita personal income'
+#     - table_name: SQINC35
+#       description: Personal current transfer receipts
+#     - table_name: SQINC4
+#       description: Personal income by major component
+#     - table_name: SQINC5H
+#       description: Personal income by major component and earnings by industry (historical)
+#     - table_name: SQINC5N
+#       description: Personal income by major component and earnings by NAICS industry
+#     - table_name: SQINC5S
+#       description: Personal income by major component and earnings by SIC industry
+#     - table_name: SQINC6N
+#       description: Compensation of employees by NAICS industry
+#     - table_name: SQINC6S
+#       description: Compensation of employees by SIC industry
+#     - table_name: SQINC7H
+#       description: Wages and salaries by industry (historical)
+#     - table_name: SQINC7N
+#       description: Wages and salaries by NAICS industry
+#     - table_name: SQINC7S
+#       description: Wages and salaries by SIC industry
+#     - table_name: TASUMMARY1
+#       description: Summary of GDP and components for U.S. territories, current dollars
+#     - table_name: TASUMMARY2
+#       description: Summary of real GDP and components for U.S. territories, chained
+#         dollars
