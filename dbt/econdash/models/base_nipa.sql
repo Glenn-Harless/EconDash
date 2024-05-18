@@ -1,15 +1,42 @@
-{% set sql_query = "" %}
+-- fixed_assets_base_model.sql
 
-{% for dataset in var('bea_datasets') if dataset.name == 'NIPA' %}
-  {% for table in dataset.api.tables %}
-    {% set sql_query = sql_query + "select '{{ dataset.name }}_{{ table.table_name }}' as table_name, TableName, SeriesCode, LineNumber, LineDescription, TimePeriod, METRIC_NAME, CL_UNIT, UNIT_MULT, DataValue, NoteRef from " + source('bea_data', dataset.name + '_' + table.table_name) + " " %}
+{% set tables_query %}
+    select table_name
+    from information_schema.tables
+    where table_schema = 'bea'
+    and table_name like 'NIPA_%'
+{% endset %}
 
-    {% if not loop.last %}
-      {% set sql_query = sql_query + " union all " %}
-    {% endif %}
-  {% endfor %}
-{% endfor %}
+{% set tables = run_query(tables_query) %}
 
-{% do debug_print(sql_query) %}
+{% if execute %}
+    {% set tables_list = tables.columns[0].values() %}
+{% else %}
+    {% set tables_list = [] %}
+{% endif %}
 
-{{ sql_query }}
+{% if tables_list | length == 0 %}
+    -- If no tables are found, return an empty result set
+    select null as table_name, null as TableName, null as SeriesCode, null as LineNumber, null as LineDescription, null as TimePeriod, null as METRIC_NAME, null as CL_UNIT, null as UNIT_MULT, null as DataValue, null as NoteRef
+    where false
+{% else %}
+    {% for table_name in tables_list %}
+        select
+          '{{ table_name }}' as table_name,
+          "TableName",
+          "SeriesCode",
+          "LineNumber",
+          "LineDescription",
+          "TimePeriod",
+          "METRIC_NAME",
+          "CL_UNIT",
+          "UNIT_MULT",
+          "DataValue",
+          "NoteRef"
+        from {{ source('bea', table_name) }}
+
+        {% if not loop.last %}
+        union all
+        {% endif %}
+    {% endfor %}
+{% endif %}

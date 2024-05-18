@@ -23,7 +23,7 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "dbt_packages"
 
 vars:
-  bea_datasets: "{{ fromyaml('airflow/stream_configs/bea_config.yaml').bea_datasets }}"
+  bea_datasets: "{{ fromyaml(bea_datasets_yaml()).bea_datasets }}"
 
 # on-run-start: "{{ 'python scripts/write_sources.py' }}"
 

@@ -4,7 +4,7 @@
     select table_name
     from information_schema.tables
     where table_schema = 'bea'
-    and table_name like 'FixedAssets_%'
+    and table_name like 'NIUnderlyingDetail%'
 {% endset %}
 
 {% set tables = run_query(tables_query) %}
