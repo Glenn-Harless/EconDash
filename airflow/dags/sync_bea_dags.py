@@ -1,4 +1,5 @@
 from airflow import DAG
+from airflow.operators.bash import BashOperator
 from airflow.operators.python_operator import PythonOperator
 from datetime import datetime, timedelta
 import os
@@ -24,7 +25,7 @@ default_args = {
 dag = DAG(
     'sync_bea_dag',
     default_args=default_args,
-    description='A DAG to sync BEA data',
+    description='A DAG to sync BEA data and run dbt tasks',
     schedule_interval=timedelta(days=1),
     start_date=datetime(2023, 5, 14),
     catchup=False,
@@ -42,9 +43,25 @@ def sync_bea():
     bea_client = BEAApiClient(api_key, db_instance)
     bea_client.sync_datasets()
 
-# Define the task
+# Define the sync task
 sync_bea_task = PythonOperator(
     task_id='sync_bea',
     python_callable=sync_bea,
     dag=dag,
 )
+
+# Define dbt tasks
+dbt_run = BashOperator(
+    task_id='dbt_run',
+    bash_command='/home/airflow/.local/bin/dbt run --project-dir /opt/dbt/econdash --profiles-dir /opt/dbt',
+    dag=dag
+)
+
+dbt_test = BashOperator(
+    task_id='dbt_test',
+    bash_command='/home/airflow/.local/bin/dbt test --project-dir /opt/dbt/econdash --profiles-dir /opt/dbt',
+    dag=dag
+)
+
+# Set dependencies
+sync_bea_task >> dbt_run >> dbt_test
