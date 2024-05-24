@@ -1,4 +1,4 @@
-.PHONY: build up down dbt-run dbt-test
+.PHONY: build up down dbt-run dbt-test load-data db-init airflow-init all build-web run-web
 
 # Build the Docker containers
 build:
@@ -34,3 +34,11 @@ airflow-init:
 
 # Full setup sequence
 all: build airflow-init up
+
+# Build the Docker container for the web application
+build-web:
+	docker-compose build web
+
+# Run the web application
+run-web:
+	docker-compose up -d web

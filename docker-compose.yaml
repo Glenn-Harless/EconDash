@@ -312,7 +312,20 @@ services:
       <<: *airflow-common-depends-on
       airflow-init:
         condition: service_completed_successfully
-
+  
+  # Streamlit web app
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"  # Streamlit's default port
+    volumes:
+      - ./web:/usr/src/app
+    env_file:
+      - .env  # Ensure this line is present to load the .env file
+    depends_on:
+      - postgres
       
 volumes:
   postgres-db-volume:
