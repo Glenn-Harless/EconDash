@@ -35,11 +35,30 @@ elif dataset == 'Underlying Detail':
 elif dataset == 'Fixed Asset':
     df = fixed_asset_df
 
-# Select metric to visualize
-metric = st.selectbox('Select Metric', df['metric_name'].unique())
 
-# Filter data based on the selected metric
-filtered_df = df[df['metric_name'] == metric]
+# Select metric to visualize
+metrics = ['All'] + df['metric_name'].unique().tolist()
+metric = st.selectbox('Select Metric', metrics)
+
+# Select description to compare
+descriptions = ['All'] + df['linedescription'].unique().tolist()
+description = st.selectbox('Select Description', descriptions)
+
+# Filter data based on the selected metric and description
+if metric != 'All':
+    filtered_df = df[df['metric_name'] == metric]
+else:
+    filtered_df = df
+
+if description != 'All':
+    filtered_df = filtered_df[filtered_df['linedescription'] == description]
+
+# Add additional filtering by category or group (example: 'category')
+if 'category' in filtered_df.columns:
+    categories = ['All'] + filtered_df['category'].unique().tolist()
+    category = st.selectbox('Select Category', categories)
+    if category != 'All':
+        filtered_df = filtered_df[filtered_df['category'] == category]
 
 # Plot the data
 fig = px.line(filtered_df, x='timeperiod', y='datavalue', title=f'{metric} over Time')
