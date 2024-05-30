@@ -163,13 +163,6 @@ Acknowledgments
 Apache Airflow
 PostgreSQL
 Bureau of Economic Analysis (BEA)
-rust
-Copy code
-
-This `README.md` provides an overview of the project, setup instructions, Makefile commands, Docker Compose configuration, DAG configuration, and descriptions of the main classes and methods. It also includes placeholders for sections on DBT data warehousing and Machine Learning and analysis. Adjust the details and paths as necessary for your specific setup.
-
-
-
 
 
 
