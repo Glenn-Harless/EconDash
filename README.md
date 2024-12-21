@@ -151,18 +151,7 @@ Setup
 Running DBT Tasks
 
 #### Machine Learning and Analysis
-Jupyter Notebooks
-Model Training
-Model Evaluation
-
-
-License
-This project is licensed under the Apache License 2.0. See the LICENSE file for details.
-
-Acknowledgments
-Apache Airflow
-PostgreSQL
-Bureau of Economic Analysis (BEA)
+TODOs
 
 
 
